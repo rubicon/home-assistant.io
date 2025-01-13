@@ -10,9 +10,11 @@ ha_codeowners:
   - '@bieniu'
 ha_domain: nam
 ha_platforms:
+  - button
+  - diagnostics
   - sensor
-ha_quality_scale: platinum
 ha_zeroconf: true
+ha_integration_type: device
 ---
 
 The Nettigo Air Monitor integration allows you to read temperature, humidity, pressure and air quality data from Nettigo Air Monitor devices. [Nettigo Air Monitor](https://air.nettigo.pl/?setlang=en) is a DIY air quality monitoring system with open source firmware, based on an open hardware project.
@@ -23,8 +25,10 @@ The integration currently has support for the following sensors:
 - BMP180
 - BMP280
 - DHT22
+- DS18B20
 - HECA
 - MH-Z14A
+- PMSx003
 - SDS011
 - SHT3X
 - SPS30

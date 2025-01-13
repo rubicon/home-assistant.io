@@ -9,16 +9,21 @@ ha_domain: sonarr
 ha_config_flow: true
 ha_codeowners:
   - '@ctalkington'
-ha_quality_scale: silver
 ha_platforms:
   - sensor
+ha_integration_type: integration
 ---
 
-The `Sonarr` integration pulls data from a given [Sonarr](https://sonarr.tv/) instance.
+The Sonarr integration pulls data from a given [Sonarr](https://sonarr.tv/) instance. This integration only supports Sonarr v3 instances.
 
 {% include integrations/config_flow.md %}
 
-To retrieve your API key, open your Sonarr web interface and navigate to Settings then General tab. Your Sonarr API Key will be listed on this page under the Security section.
+{% configuration_basic %}
+URL:
+  description: The IP, FQDN, or URL of your Sonarr instance including the port number if you are not using port 8989 and your custom URL base if applicable.
+API Key:
+  description: To retrieve your API key, open your Sonarr web interface and navigate to Settings, then the General tab. Your Sonarr API Key will be listed on this page under the Security section.
+{% endconfiguration_basic %}
 
 ## Sensors
 
