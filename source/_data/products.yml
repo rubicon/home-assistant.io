@@ -1,0 +1,310 @@
+# Flags rendered via https://flagpedia.net/
+# flag_iso accepts ISO 3166 country code
+green:
+  name: "<strong>Home Assistant Green</strong>"
+  distributors:
+      # America
+    - name: Amazon US
+      flag_iso: us
+      ship_to: America
+      ship_from: UK
+      url: https://www.amazon.com/dp/B0CXVKSG19?maas=maas_adg_BB51722E249D328CABB2F6DF1F8976CC_afap_abs&ref_=aa_maas&tag=maas
+      logo: /images/distributors/amazon.webp
+    - name: ameriDroid
+      flag_iso: us
+      ship_to: America
+      ship_from: UK
+      url: https://ameridroid.com/products/home-assistant-green
+      logo: /images/distributors/ameridroid.webp
+    - name: CloudFree
+      flag_iso: us
+      ship_to: America
+      ship_from: UK
+      url: https://cloudfree.shop/product/home-assistant-green/
+      logo: /images/distributors/cloudfree.webp
+    - name: Seeed Studio
+      flag_iso: us
+      ship_to: America
+      ship_from: UK
+      url: https://www.seeedstudio.com/Home-Assistant-Green-p-5792.html
+      logo: /images/distributors/seeed-studio.webp
+      # Asia
+    - name: Seeeed Studio
+      flag_iso: cn
+      ship_to: Asia
+      ship_from: UK
+      url: https://www.seeedstudio.com/Home-Assistant-Green-p-5792.html
+      logo: /images/distributors/seeed-studio.webp
+      # Australia
+    - name: Oz Smart Things
+      flag_iso: au
+      ship_to: Australia
+      ship_from: UK
+      url: https://www.ozsmartthings.com.au/products/home-assistant-green-smart-hub
+      logo: /images/distributors/oz-smart-things.webp
+    - name: Smart Guys
+      flag_iso: au
+      ship_to: Australia
+      ship_from: UK
+      url: https://smartguys.com.au/home-assistant-green.html
+      logo: /images/distributors/smart-guys.webp
+    - name: SmartHome
+      flag_iso: au
+      ship_to: Australia
+      ship_from: UK
+      url: https://www.smarthome.com.au/product/home-assistant-green/
+      logo: /images/distributors/smarthome.webp
+      # Europe
+    - name: Alza.cz
+      flag_iso: cz
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.alza.cz/home-assistant-green-d7998187.htm
+      logo: /images/distributors/alza-cz.webp
+    - name: Botland
+      flag_iso: pl
+      ship_to: Europe
+      ship_from: UK
+      url: https://botland.com.pl/centralki-i-bramki-sieciowe/24319-home-assistant-green-inteligentna-centralka-nabu-casa-nc-green-1175-794677011758.html
+      logo: /images/distributors/botland.webp
+    - name: DinamoTech
+      flag_iso: it
+      ship_to: Europe
+      ship_from: UK
+      url: https://dinamotech.it/products/home-assistant-green
+      logo: /images/distributors/dinamo-tech.webp
+    - name: Domadoo
+      flag_iso: fr
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.domadoo.fr/fr/box-domotique/7046-nabu-casa-box-domotique-home-assistant-green-0794677011758.html
+      logo: /images/distributors/domadoo.jpg
+    - name: Everything Smart Technology
+      flag_iso: gb
+      ship_to: Europe
+      ship_from: UK
+      url: https://shop.everythingsmart.io/products/home-assistant-green
+      logo: /images/distributors/est.webp
+    - name: eWeLink device store
+      flag_iso: hu
+      ship_to: Europe
+      ship_from: UK
+      url: https://ewelinkstore.com/product/home-assistant-green-hub/
+      logo: /images/distributors/ewelink.png
+    - name: HAshop
+      flag_iso: nl
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.hashop.nl/Home-Assistant-Green
+      logo: /images/distributors/ha-shop.webp
+    - name: ROBBshop
+      flag_iso: nl
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.robbshop.nl/home-assistant-green-smart-hub
+      logo: /images/distributors/robb.webp
+    - name: Kjell
+      flag_iso: "no"
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.kjell.com/no/produkter/smarte-hjem/kontroller/nabu-casa-home-assistant-green-p88430
+      logo: /images/distributors/kjell-company.webp
+    - name: Mauser
+      flag_iso: pt
+      ship_to: Europe
+      ship_from: UK
+      url: https://mauser.pt/catalog/product_info.php?products_id=095-3152
+      logo: /images/distributors/mauser.png
+    - name: mediarath
+      flag_iso: de
+      ship_to: Europe
+      ship_from: UK
+      url: https://mediarath.de/products/home-assistant-green-smart-home-hub-2x-usb-gigabit-lan-hmdi-microsd-slot
+      logo: /images/distributors/mediarath-de.webp
+    - name: m.nu
+      flag_iso: se
+      ship_to: Europe
+      ship_from: UK
+      url: https://en.m.nu/controllers-smart-hubs/home-assistant-green
+      logo: /images/distributors/m-nu.webp
+    - name: OkosOtthon Bolt
+      flag_iso: hu
+      ship_to: Europe
+      ship_from: UK
+      url: https://okosotthon.bolt.hu/webaruhaz/termek/home-assistant-green-hub/
+      logo: /images/distributors/okosotthon.png
+    - name: Pi-Shop.ch
+      flag_iso: ch
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.pi-shop.ch/home-assistant-green
+      logo: /images/distributors/pi-shop.webp
+    - name: Pimoroni
+      flag_iso: gb
+      ship_to: Europe
+      ship_from: UK
+      url: https://shop.pimoroni.com/products/home-assistant-green
+      logo: /images/distributors/pimoroni.webp
+    - name: RaspberryPi.dk
+      flag_iso: dk
+      ship_to: Europe
+      ship_from: UK
+      url: https://raspberrypi.dk/en/product/home-assistant-green/
+      logo: /images/distributors/RaspberryPi-dk.webp
+    - name: Seeed Studio
+      flag_iso: cn
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.seeedstudio.com/Home-Assistant-Green-p-5792.html
+      logo: /images/distributors/seeed-studio.webp
+    - name: SmarterHOME
+      flag_iso: sk
+      ship_to: Europe
+      ship_from: UK
+      url: https://smarterhome.sk/sk/centralne-jednotky/home-assistant-green-smart-home-hub-1490.html
+      logo: /images/distributors/smarter-home.png
+    - name: Swiss-Domotique
+      flag_iso: ch
+      ship_to: Europe
+      ship_from: UK
+      url: https://shop.swiss-domotique.ch/smarthome-hub/2295-nabu-casa-home-assistant-green.html
+      logo: /images/distributors/swiss-domotique.webp
+    - name: The Pi Hut
+      flag_iso: gb
+      ship_to: Europe
+      ship_from: UK
+      url: https://thepihut.com/products/home-assistant-green
+      logo: /images/distributors/pi-hut.webp
+    - name: Webhallen
+      flag_iso: se
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.webhallen.com/se/product/364271-Nabu-Casa-Home-Assistant-Green
+      logo: /images/distributors/webhallen.webp
+    - name: WIFIShop
+      flag_iso: ro
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.wifishop.ro/en/homeassistant/home-assistant-green.html
+      logo: /images/distributors/wifishop.webp
+voice_pe:
+  name: "<strong>Home Assistant Voice</strong> Preview Edition"
+  distributors:
+      # America
+    - name: ameriDroid
+      flag_iso: us
+      ship_to: America
+      ship_from: UK
+      url: https://ameridroid.com/products/home-assistant-voice-preview-edition/
+      logo: /images/distributors/ameridroid.webp
+    - name: CloudFree
+      flag_iso: us
+      ship_to: America
+      ship_from: UK
+      url: https://cloudfree.shop/product/home-assistant-voice-preview-edition/
+      logo: /images/distributors/cloudfree.webp
+    - name: Seeed Studio
+      flag_iso: cn
+      ship_to: America
+      ship_from: UK
+      url: https://www.seeedstudio.com/Home-Assistant-Voice-p-6998.html
+      logo: /images/distributors/seeed-studio.webp
+      # Asia
+    - name: Seeed Studio
+      flag_iso: cn
+      ship_to: Asia
+      ship_from: UK
+      url: https://www.seeedstudio.com/Home-Assistant-Voice-p-6998.html
+      logo: /images/distributors/seeed-studio.webp
+      # Australia
+    - name: OZ Smart Things
+      flag_iso: au
+      ship_to: Australia
+      ship_from: UK
+      url: https://www.ozsmartthings.com.au/products/ha-voice-preview-edition
+      logo: /images/distributors/oz-smart-things.webp
+    - name: Smart Guys
+      flag_iso: au
+      ship_to: Australia
+      ship_from: UK
+      url: https://smartguys.com.au/product/home-assistant-voice-preview-edition/
+      logo: /images/distributors/smart-guys.webp
+      # Europe
+    - name: Alza.cz
+      flag_iso: cz
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.alza.cz/home-assistant-voice-preview-edition-d12741248.htm
+      logo: /images/distributors/alza-cz.webp
+    - name: RaspberryPi.dk
+      flag_iso: dk
+      ship_to: Europe
+      ship_from: UK
+      url: https://raspberrypi.dk/en/product/home-assistant-voice-preview-edition/
+      logo: /images/distributors/RaspberryPi-dk.webp
+    - name: Domadoo
+      flag_iso: fr
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.domadoo.fr/fr/box-domotique/7558-nabu-casa-home-assistant-voice-preview-edition-0860011789727.html
+      logo: /images/distributors/domadoo.jpg
+    - name: Mediarath
+      flag_iso: de
+      ship_to: Europe
+      ship_from: UK
+      url: https://mediarath.de/products/home-assistant-voice-preview-edition-open-source-privacy-focused-voice-assistant-with-esphome
+      logo: /images/distributors/mediarath.de.webp
+    - name: Seeed Studio
+      flag_iso: cn
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.seeedstudio.com/Home-Assistant-Voice-p-6998.html
+      logo: /images/distributors/seeed-studio.webp
+    - name: Dinamotech
+      flag_iso: it
+      ship_to: Europe
+      ship_from: UK
+      url: https://dinamotech.it/products/home-assistant-voice
+      logo: /images/distributors/dinamo-tech.webp
+    - name: Botland
+      flag_iso: pl
+      ship_to: Europe
+      ship_from: UK
+      url: https://botland.com.pl/asystenci-glosowi/25872-home-assistant-voice-preview-edition-asystent-glosowy-860011789727.html
+      logo: /images/distributors/botland.webp
+    - name: Mauser.pt
+      flag_iso: pt
+      ship_to: Europe
+      ship_from: UK
+      url: https://mauser.pt/catalog/product_info.php?products_id=095-4747
+      logo: /images/distributors/mauser.png
+    - name: SmarterHOME
+      flag_iso: sk
+      ship_to: Europe
+      ship_from: UK
+      url: https://smarterhome.sk/sk/hlasovi-asistenti/home-assistant-voice-preview-edition-1714.html
+      logo: /images/distributors/smarter-home.png
+    - name: Webhallen
+      flag_iso: se
+      ship_to: Europe
+      ship_from: UK
+      url: https://www.webhallen.com/377166
+      logo: /images/distributors/webhallen.webp
+    - name: Swiss-Domotique
+      flag_iso: ch
+      ship_to: Europe
+      ship_from: UK
+      url: https://shop.swiss-domotique.ch/de/sound/2667-nabu-casa-home-assistant-voice-preview-edition.html
+      logo: /images/distributors/swiss-domotique.webp
+    - name: Everything Smart Technology
+      flag_iso: gb
+      ship_to: Europe
+      ship_from: UK
+      url: https://shop.everythingsmart.io/products/home-assistant-voice-preview-edition
+      logo: /images/distributors/est.webp
+    - name: The Pi Hut
+      flag_iso: gb
+      ship_to: Europe
+      ship_from: UK
+      url: https://thepihut.com/products/home-assistant-voice-preview-edition
+      logo: /images/distributors/pi-hut.webp
