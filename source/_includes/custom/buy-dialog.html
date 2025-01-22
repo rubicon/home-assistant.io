@@ -1,7 +1,6 @@
 {% if include.product and site.data.products[include.product] %}
     {% assign product = site.data.products[include.product] %}
     {% assign distributor_regions = product.distributors | group_by: 'ship_to' %}
-    {% assign distributor_countries = product.distributors | group_by: 'flag_iso' %}
 {% endif %}
 
 <div class="ha-buy-dialog">
@@ -16,45 +15,32 @@
             </div>
         </div>
         <div class="ha-buy-dialog-content">
-            <div class="new">
-                <select>
-                    <option>Choose your country</option>
-                    <option value="us">{{ site.data.countries["us"] }}</option>
-                    <option value="cn">{{ site.data.countries["cn"] }}</option>
-                    <option value="au">{{ site.data.countries["au"] }}</option>
-                    <option value="cz">{{ site.data.countries["cz"] }}</option>
-                    <option value="pl">{{ site.data.countries["pl"] }}</option>
-                    <option value="it">{{ site.data.countries["it"] }}</option>
-                    <option value="fr">{{ site.data.countries["fr"] }}</option>
-                    <option value="gb">{{ site.data.countries["gb"] }}</option>
-                    <option value="hu">{{ site.data.countries["hu"] }}</option>
-                    <option value="nl">{{ site.data.countries["nl"] }}</option>
-                    <option value="no">{{ site.data.countries["no"] }}</option>
-                    <option value="pt">{{ site.data.countries["pt"] }}</option>
-                    <option value="de">{{ site.data.countries["de"] }}</option>
-                    <option value="se">{{ site.data.countries["se"] }}</option>
-                    <option value="ch">{{ site.data.countries["ch"] }}</option>
-                    <option value="dk">{{ site.data.countries["dk"] }}</option>
-                    <option value="sk">{{ site.data.countries["sk"] }}</option>
-                    <option value="ro">{{ site.data.countries["ro"] }}</option>
-                </select>
+            <div class="ha-buy-dialog-sidebar">
+                <div class="ha-buy-dialog-sidebar-label">Shipping to</div>
+                <div class="ha-buy-dialog-sidebar-tabs">
+                    {% for distributor_region in distributor_regions %}
+                    <div class="ha-buy-dialog-sidebar-tab {% if forloop.first %}active{% endif %}" aria-role="tab" aria-selected="true" aria-controls="#{{ distributor_region.name | slugify }}" data-tab="#{{ distributor_region.name | slugify }}">
+                        {{ distributor_region.name }}
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
 
             <div class="ha-buy-dialog-tab-content-wrapper">
-                {% for distributor_region in distributor_countries %}
-                <div class="ha-buy-dialog-tab-content {% if forloop.first %}active{% endif %} active" id="{{ distributor_region.name | slugify }}">
-
+                {% for distributor_region in distributor_regions %}
+                <div class="ha-buy-dialog-tab-content {% if forloop.first %}active{% endif %}" id="{{ distributor_region.name | slugify }}">
+                    {% assign az_ship_distributors = distributor_region.items | sort: 'name' | sort: 'ship_from'%}
                     <div class="ha-buy-dialog-distributor-items">
-                        {% for distributor in distributor_region.items %}
+                        {% for distributor in az_ship_distributors %}
                         <a href="{{ distributor.url }}" target="_blank" rel="noreferrer" class="ha-buy-dialog-distributor-item">
                             {% if distributor.logo %}
                             <img src="{{ distributor.logo }}" alt="{{ distributor.name }} logo" class="ha-buy-dialog-distributor-logo">
                             {% else %}
                             {{ distributor.name }}
                             {% endif %}
-                            {% if distributor.ship_from %}
-                            <span>Ships from {{ distributor.ship_from }}</span>
-                            {% endif %}
+                            <span>
+                                Ships from {{ distributor.ship_from }}
+                            </span>
                         </a>
                         {% endfor %}
                     </div>
@@ -64,25 +50,13 @@
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="/voice-pe/nice-select2.css" />
+<script src="/voice-pe/nice-select2.js" defer></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        
         let dialog = document.querySelector('.ha-buy-dialog');
         let tabs = dialog.querySelectorAll('.ha-buy-dialog-sidebar-tab');
         let tabContents = dialog.querySelectorAll('.ha-buy-dialog-tab-content');
-
-        let select = dialog.querySelector('.new select');
-        select.addEventListener('change', function () {
-            let value = select.value;
-            let tabContents = dialog.querySelectorAll('.ha-buy-dialog-tab-content');
-
-            tabContents.forEach(tabContent => tabContent.classList.remove('active'));
-            tabContents.forEach(tabContent => {
-                if (tabContent.id === value) {
-                    tabContent.classList.add('active');
-                }
-            });
-        });
 
         tabs.forEach(tab => {
             tab.addEventListener('click', function () {
@@ -102,6 +76,7 @@
         let close = dialog.querySelector('.close');
         close.addEventListener('click', function () {
             dialog.classList.remove('open');
+            document.documentElement.style.overflow = "";
         });
 
         let openTargets = document.querySelectorAll('.buy');
@@ -109,31 +84,34 @@
             target.addEventListener('click', function (e) {
                 e.preventDefault();
                 dialog.classList.add('open');
+                document.documentElement.style.overflow = "hidden";
                 focusDistributors(dialog);
             });
         });
 
         if (window.location.hash === '#buy') {
             dialog.classList.add('open');
+            document.documentElement.style.overflow = "hidden";
             focusDistributors(dialog);
         }
 
         dialog.addEventListener('click', function (e) {
             if (!e.target.closest('.ha-buy-dialog-inner')) {
                 dialog.classList.remove('open');
+                document.documentElement.style.overflow = "";
             }
         });
 
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 dialog.classList.remove('open');
+                document.documentElement.style.overflow = "";
             }
         });
 
     });
 
     function focusDistributors(dialog){
-        return;
         let tabs = dialog.querySelectorAll('.ha-buy-dialog-sidebar-tab');
         let tabContents = dialog.querySelectorAll('.ha-buy-dialog-tab-content');
         let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;

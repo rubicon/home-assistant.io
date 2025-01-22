@@ -102,7 +102,7 @@ frontpage_image: /images/frontpage/feature-zbt1.jpg
           <img src="/images/connectzbt1/connectzbt1_isometric.png" />
         </div>
       </div>
-      <div class="banner-overlay-button" onclick="showBuyDialog()">
+      <div class="banner-overlay-button buy" onclick="showBuyDialog()">
         <div>Order now</div>
       </div>
     </div>
@@ -734,9 +734,10 @@ frontpage_image: /images/frontpage/feature-zbt1.jpg
   </div>
 </div>
 
+{% include custom/buy-dialog.html product="zbt-1" %}
+
 <div
-  class="fab" style="position: fixed; top: 116px; height: 48px;"
-  onclick="showBuyDialog()"
+  class="fab buy" style="position: fixed; top: 116px; height: 48px;"
   title="Order Home Assistant Connect ZBT-1"
 >
   <svg style="width: 32px; height: 32px" viewBox="0 0 32 32">
@@ -748,41 +749,6 @@ frontpage_image: /images/frontpage/feature-zbt1.jpg
   ORDER
 </div>
 
-<script>
-  const buyDialog = document.getElementById("buy-dialog");
-  const buyFab = document.querySelector(".fab");
-
-  function showBuyDialog() {
-    buyDialog.style.display = "flex";
-    buyFab.style.display = "none";
-  }
-
-  function closeDialog() {
-    buyDialog.style.display = "none";
-    buyFab.style.display = "flex";
-  }
-
-  window.onclick = function (event) {
-    if (event.target === buyDialog) {
-      closeDialog();
-    }
-  };
-
-  if (document.location.search === "?order") {
-    showBuyDialog();
-  }
-
-  try {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const continent = tz.replace( /^(Asia|America|Australia|Europe)\/.*$/, '$1' );
-
-    if ( continent != tz ) {
-      document.querySelector( `#dist_${continent.toLowerCase()}` ).open = true;
-    }
-  } catch ( ev ) {
-    // Ignore...
-  }
-</script>
 <script>
   if (window.location.hash === "#from-skyconnect") {
     const banner = document.createElement("div");
