@@ -268,7 +268,7 @@ zbt-1:
     - name: eWeLink device store
       ship_from: Hungary
       ship_to: Europe
-      url: https://ewelinkstore.com/product/home-assistant-skyconnect-a-zigbee-thread-matter-usb-stick-for-home-assistant/
+      url: https://ewelinkstore.com/product/home-assistant-connect-zbt-1-a-zigbee-thread-matter-usb-stick/
       logo: /images/distributors/ewelink.png
     - name: HAshop
       ship_from: Netherlands
@@ -288,7 +288,7 @@ zbt-1:
     - name: mediarath
       ship_from: Germany
       ship_to: Europe
-      url: https://mediarath.de/products/home-assistant-skyconnect-zigbee-thread-matter-usb-stick-fur-home-assistant
+      url: https://mediarath.de/products/home-assistant-connect-zbt-1-zigbee-thread-matter-usb-stick-fur-home-assistant-skyconnect
       logo: /images/distributors/mediarath.de.webp
     - name: m.nu
       ship_from: Sweden
@@ -298,7 +298,7 @@ zbt-1:
     - name: OkosOtthon Bolt
       ship_from: Hungary
       ship_to: Europe
-      url: https://okosotthon.bolt.hu/webaruhaz/termek/home-assistant-skyconnect-egy-zigbee-thread-matter-usb-kulcs-home-assistant-hoz/
+      url: https://okosotthon.bolt.hu/webaruhaz/termek/home-assistant-connect-zbt-1-zigbee-thread-matter-usb-kulcs/
       logo: /images/distributors/okosotthon.png
     - name: Pimoroni
       ship_from: UK
