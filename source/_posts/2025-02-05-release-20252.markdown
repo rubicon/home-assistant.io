@@ -297,7 +297,7 @@ We welcome the following new integrations in this release:
   Enables using Home Assistant to provide context for MCP LLM Client Applications. For example, you can expose your Google Tasks To-do list as a tool for Claude Desktop.
 - **[Model Context Protocol]**, added by [@allenporter]
   Enables using [MCP Servers] in Home Assistant for providing additional tools to use with a conversation agent.
-- **[Qbus]**, added by [@Qbus-iot]
+- **[Qbus]**, added by [@thomasddn]
   Allows you to integrate your [Qbus Control] into Home Assistant.
 - **[Google Drive]**, added by [@tronikos]
   Allows you to store your Home Assistant backups in your Google drive.
@@ -315,7 +315,7 @@ This release also has a new virtual integration. Virtual integrations are stubs 
 [@Taraman17]: https://github.com/Taraman17
 [@allenporter]: https://github.com/allenporter
 [@starkillerOG]: https://github.com/starkillerOG
-[@Qbus-iot]: https://github.com/Qbus-iot
+[@thomasddn]: https://github.com/thomasddn
 [@tronikos]: https://github.com/tronikos
 [@zweckj]: https://github.com/zweckj
 [Homee smart home system]: https://hom.ee/
