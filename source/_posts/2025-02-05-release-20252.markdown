@@ -86,6 +86,12 @@ Enjoy the (beta) release!
     - [Backup on updating add-ons](#backup-on-updating-add-ons)
   - [Improved filenames for backups](#improved-filenames-for-backups)
 - [Voice](#voice)
+  - [New Broadcast intent](#new-broadcast-intent)
+  - [Setting Temperature on Thermostat](#setting-temperature-on-thermostat)
+  - [LLMs meet calendars](#llms-meet-calendars)
+  - [Shared history between the default conversation agent and its LLM-based fallback](#shared-history-between-the-default-conversation-agent-and-its-llm-based-fallback)
+  - [Model Context Protocol](#model-context-protocol)
+  - [Home Assistant will be able to call your analog phone to tell you a message](#home-assistant-will-be-able-to-call-your-analog-phone-to-tell-you-a-message)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
@@ -126,6 +132,8 @@ While our default recommendation remains to encrypt backups, as of this
 release, you can turn off encryption on a per location basis. This allows you
 to store backups on you local NAS, for example, in an unencrypted format.
 
+<img class="no-shadow" alt="Temporary screenshot" src="/images/blog/2025-02/encryption-settings.png" />
+
 There is one exception to this, which is Home Assistant Cloud. Backups stored
 in Home Assistant Cloud will always be encrypted, and encryption cannot be turned off.
 At Nabu Casa, we take your privacy and security very seriously, and we never
@@ -151,6 +159,8 @@ NAS systems during the night, meaning the backup would fail.
 This release, we added the ability to customize the time of your backups to your
 liking. Additionally, if you choose to make weekly backups, you can now select
 the days of the week you want the backup to run.
+
+<img class="no-shadow" alt="Temporary screenshot" src="/images/blog/2025-02/backup-schedule.png" />
 
 ### Taking backups on an advanced schedule
 
@@ -184,6 +194,8 @@ When updating Home Assistant, the toggle is now turned off by default and
 shows the last time you made a backup. This gives you a clear indication of
 when you last made a backup, and gives you the ability to decide if you want
 to make a new one before updating.
+
+<img class="no-shadow" alt="Temporary screenshot" src="/images/blog/2025-02/backup-toggle-update.png" />
 
 If you turn the switch on, a full automated backup is created and synced to
 your configured locations, before the update is started.
@@ -234,9 +246,7 @@ Try it by saying "Set the temperature to 19 degrees"
 This will smartly target the area you are in (If you have a thermostat per area, such as thermostatic valves on your radiators) or the floor you are in (If you only have a central unit). You can also target specific devices by name if you prefer.
 
 ### LLMs meet calendars
-Without complex custom tooling, LLM-based conversation agents previously could not fetch events from your calendar. This release changes that. Out of the box, LLM-based agents can now retrieve today’s and this week’s events from any of your calendars. Don’t forget to [expose your calendar entities](## LLMs meet calendars
-
-Without complex custom tooling, LLM-based conversation agents previously could not fetch events from your calendar. This release changes that. Out of the box, LLM-based agents can now retrieve today’s and this week’s events from any of your calendars. Don’t forget to [expose your calendar entities](/voice_control/voice_remote_expose_devices/) to enable this functionality.) to enable this functionality.
+Without complex custom tooling, LLM-based conversation agents previously could not fetch events from your calendar. This release changes that. Out of the box, LLM-based agents can now retrieve today’s and this week’s events from any of your calendars. Don’t forget to [expose your calendar entities](/voice_control/voice_remote_expose_devices/) to enable this functionality.
 
 ### Shared history between the default conversation agent and its LLM-based fallback
 In [2024.12](/blog/2024/12/04/release-202412/) we introduced a lovely feature that allowed you to use our fast and local default conversation agent for most queries, and yet be able to fall back to a much more powerful LLM-based agent for more complex queries.
@@ -244,18 +254,18 @@ In [2024.12](/blog/2024/12/04/release-202412/) we introduced a lovely feature th
 This introduced some interesting behaviors. From a user perspective, it looked like you were talking to the same assistant, whereas, in reality, nothing was shared between the two agents.
 This led to some less-than-optimal scenarios, such as this one: 
 
-<img>
+<img class="no-shadow" alt="Screenshot of missing history in the conversation" src="/images/blog/2025-02/conversation-history-before.png" />
 
 The first command is processed locally by our default agent, but the follow-up request is processed by the LLM-based agent, since no memory is shared, it does not understand what device you want to turn off.
 
 Starting with this release, both agents now share the same command history, fixing completely this issue.
 
-<img>
+<img class="no-shadow" alt="Screenshot of the new improved behavior" src="/images/blog/2025-02/conversation-history-after.png" />
 
 ### Model Context Protocol
 [Model Context Protocol](https://modelcontextprotocol.io/introduction) is here. Users can now integrate Home Assistant into their AI tools that support MCP, and integrate MCP servers as tools in Home Assistant.
 
-### Home Assistant will be able to call your analog phone to tell you a message.
+### Home Assistant will be able to call your analog phone to tell you a message
 
 The [VoIP](/integrations/voip/) integration will now be able to call your phone and tell you a message! Using the [`assist_satellite.announce`](/integrations/assist_satellite#action-assist_satelliteannounce) you can play a message when some one picks up the phone.
 
@@ -345,7 +355,10 @@ The following integration is now available via the Home Assistant UI:
 
 ## Other noteworthy changes
 
-- New graphs
+- The frontend is using a new graph library! You should not notice any big changes (yet), but this will prepare us for bigger changes in the future!
+- The [bluetooth] integration got it's own config panel, where you can see information about your bluetooth devices, like advertisement data.
+
+[bluetooth]: /integrations/bluetooth
 
 ## Need help? Join the community!
 
