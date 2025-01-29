@@ -59,6 +59,10 @@ The following binary sensors are currently available per plant:
 - Repotted
 - Sensor update available
 
+### Image
+
+The picture created or chosen in the FYTA app is also exposed to Home Assistant.
+
 ### Sensors
 
 The following sensors are currently available per plant:
