@@ -129,6 +129,47 @@ Reset main brush consumable - The main brush/ roller is expected to be replaced 
 
 Reset air filter - The air filter is expected to be replaced every 150 hours.
 
+### Actions
+
+#### Action `roborock.set_vacuum_goto_position`
+
+Go the specified coordinates.
+
+- **Data attribute**: `entity_id`
+  - **Description**: Only act on a specific robot.
+  - **Optional**: No.
+- **Data attribute**: `x_coord`
+  - **Description**: X-coordinate, integer value. The dock is located at x-coordinate 25500.
+  - **Optional**: No.
+- **Data attribute**: `y_coord`
+  - **Description**: Y-coordinate, integer value. The dock is located at y-coordinate 25500.
+  - **Optional**: No.
+
+#### Action `roborock.get_vacuum_current_position`
+
+Get the current position of the vacuum. This is a cloud call and should only be used for diagnostics. This is not meant to be used for automations. Frequent requests can lead to rate limiting. 
+
+- **Data attribute**: `entity_id`
+  - **Description**: Only act on a specific robot.
+  - **Optional**: No.
+
+Example:
+
+```yaml
+action: roborock.get_vacuum_current_position
+target:
+  entity_id: vacuum.roborock_s7
+data: {}
+```
+
+- **Result**: You will get a response like this:
+
+  ```yaml
+  vacuum.roborock_s7:
+    x: 28081
+    y: 25168
+  ```
+
 ### Image
 
 You can see all the maps within your Roborock account. Keep in mind that they are device-specific. The maps require the cloud API to communicate as the maps are seemingly stored on the cloud. If someone can figure out a way around this - contributions are always welcome.
