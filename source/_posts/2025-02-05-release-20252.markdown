@@ -299,9 +299,9 @@ We welcome the following new integrations in this release:
   Enables using [MCP Servers] in Home Assistant for providing additional tools to use with a conversation agent.
 - **[Qbus]**, added by [@Qbus-iot]
   Allows you to integrate your [Qbus Control] into Home Assistant.
-- **[Google Drive]**
+- **[Google Drive]**, added by [@tronikos]
   Allows you to store your Home Assistant backups in your Google drive.
-- **[OneDrive]**
+- **[OneDrive]**, added by [@zweckj]
   Allows you to store your Home Assistant backups in your Microsoft OneDrive.
 
 
@@ -316,6 +316,8 @@ This release also has a new virtual integration. Virtual integrations are stubs 
 [@allenporter]: https://github.com/allenporter
 [@starkillerOG]: https://github.com/starkillerOG
 [@Qbus-iot]: https://github.com/Qbus-iot
+[@tronikos]: https://github.com/tronikos
+[@zweckj]: https://github.com/zweckj
 [Homee smart home system]: https://hom.ee/
 [Homee]: /integrations/homee
 [iglooco smart access device(s)]: https://www.igloohome.co/#products
