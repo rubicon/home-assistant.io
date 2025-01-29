@@ -304,7 +304,6 @@ We welcome the following new integrations in this release:
 - **[OneDrive]**, added by [@zweckj]
   Allows you to store your Home Assistant backups in your Microsoft OneDrive.
 
-
 This release also has a new virtual integration. Virtual integrations are stubs that are handled by other (existing) integrations to help with discoverability. These ones are new:
 
 - **[Decorquip Dream]**, provided by [Motionblinds] added by [@starkillerOG]
@@ -343,6 +342,7 @@ integrations are also being constantly improved. Here are some of the noteworthy
 changes to existing integrations:
 
 - Support for the [Shelly] BLU TRV was added by [@chemelli74]!
+- [@joostlek] added support for the [HomeWizard] Plug-In Battery. Thanks Joost!
 - There is now support for humidifiers and numbers for [Vesync] devices! Thanks [@iprak]!
 - [@rytilahti] added support for [TP-Link Tapo] Robovacs.
 
@@ -352,6 +352,7 @@ changes to existing integrations:
 [Vesync]: /integrations/vesync
 [@rytilahti]: https://github.com/rytilahti
 [TP Link Tapo]: /integrations/tplink
+[HomeWizard]: /integrations/homewizard
 
 
 ### Now available to set up from the UI
@@ -371,7 +372,7 @@ The following integration is now available via the Home Assistant UI:
 ## Other noteworthy changes
 
 - The frontend is using a new graph library! You should not notice any big changes (yet), but this will prepare us for bigger changes in the future!
-- The [bluetooth] integration got it's own config panel, where you can see information about your bluetooth devices, like advertisement data.
+- The [bluetooth] integration got its own config panel, where you can see information about your bluetooth devices, like advertisement data.
 
 [bluetooth]: /integrations/bluetooth
 
@@ -417,7 +418,7 @@ Some appliances might lose their power entity as the power setting is not report
 
 ([@Diegorro98] - [#135930]) ([documentation](/integrations/home_connect))
 
-[@Diegorro98]: https://github.com/135930
+[@Diegorro98]: https://github.com/Diegorro98
 [#135930]: https://github.com/home-assistant/core/pull/135930
 
 {% enddetails %}
@@ -491,6 +492,36 @@ These changes support the addition of translation keys for text-based entity sta
 
 [@dieselrabbit]: https://github.com/dieselrabbit
 [#133866]: https://github.com/home-assistant/core/pull/133866
+
+{% enddetails %}
+
+{% details "Raw Backward-incompatible changes" %}
+
+- Make screenlogic state enums lowercase ([@dieselrabbit] - [#133866]) ([screenlogic docs]) (breaking-change)
+- Remove mqtt publish templates after 6 months of deprecation ([@jbouwh] - [#134056]) ([mqtt docs]) (breaking-change)
+- Remove deprecated yaml import for Russound RIO ([@noahhusby] - [#134072]) ([russound_rio docs]) (breaking-change)
+- Remove deprecated Mastodon yaml config import ([@andrew-codechimp] - [#134040]) ([mastodon docs]) (breaking-change)
+- Remove deprecated yaml import from OTP integration ([@tr4nt0r] - [#134196]) ([otp docs]) (breaking-change)
+- Remove deprecated yaml import from pyLoad integration ([@tr4nt0r] - [#134200]) ([pyload docs]) (breaking-change)
+- Remove worldclock config entry import ([@gjohansson-ST] - [#134491]) ([worldclock docs]) (breaking-change)
+- Remove deprecated attributes from ecovacs ([@gjohansson-ST] - [#134492]) ([ecovacs docs]) (breaking-change)
+- Remove deprecated uptime sensor from qnap_qsw ([@gjohansson-ST] - [#134493]) ([qnap_qsw docs]) (breaking-change)
+- Remove deprecated sensors in Habitica integration ([@tr4nt0r] - [#134320]) ([habitica docs]) (breaking-change)
+- Remove deprecated binary sensor battery charging from technove ([@gjohansson-ST] - [#134844]) ([technove docs]) (breaking-change)
+- Remove deprecated hdr switch from reolink ([@gjohansson-ST] - [#134924]) ([reolink docs]) (breaking-change)
+- Remove deprecated config entry import from bluesound ([@gjohansson-ST] - [#134926]) ([bluesound docs]) (breaking-change)
+- Change minimum SQLite version to 3.40.1 ([@gjohansson-ST] - [#135042]) ([recorder docs]) (breaking-change)
+- Refactor the MQTT option and reconfigure flow ([@jbouwh] - [#133342]) ([mqtt docs]) (breaking-change)
+- Drop Python 3.12 support ([@frenck] - [#135589]) (breaking-change)
+- Bump `imgw_pib` to version 1.0.9 and remove hydrological detail entities ([@bieniu] - [#134668]) ([imgw_pib docs]) (breaking-change)
+- Add power switch only if it is available at Home Connect ([@Diegorro98] - [#135930]) ([home_connect docs]) (breaking-change)
+- Fix KNX default state updater option ([@farmio] - [#135611]) ([knx docs]) (breaking-change)
+- Raise exceptions in HEOS service actions ([@andrewsayre] - [#136049]) ([heos docs]) (breaking-change)
+- Remove extra_state_attributes from Litter-Robot vacuum entities ([@natekspencer] - [#136196]) ([litterrobot docs]) (breaking-change)
+- Remove deprecated 17track package sensor ([@gjohansson-ST] - [#136389]) ([seventeentrack docs]) (breaking-change)
+- Cleanup ecobee YAML configuration import ([@epenet] - [#136633]) ([ecobee docs]) (breaking-change)
+- Raise exceptions in HEOS custom actions ([@andrewsayre] - [#136546]) ([heos docs]) (breaking-change)
+- Use the new hybrid Hydrawise client ([@dknowles2] - [#136522]) ([hydrawise docs]) (breaking-change)
 
 {% enddetails %}
 
