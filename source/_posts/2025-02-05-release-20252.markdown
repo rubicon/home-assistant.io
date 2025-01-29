@@ -2,7 +2,7 @@
 layout: post
 title: "2025.2 Beta: Iterating on backups"
 description: "Beta release notes for Home Assistant 2025.2"
-date: 2024-12-28 00:00:00
+date: 2025-01-29 00:00:00
 date_formatted: "February 5, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -85,6 +85,7 @@ Enjoy the (beta) release!
     - [Backup on updating Home Assistant](#backup-on-updating-home-assistant)
     - [Backup on updating add-ons](#backup-on-updating-add-ons)
   - [Improved filenames for backups](#improved-filenames-for-backups)
+- [Voice](#voice)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
@@ -121,9 +122,9 @@ requested feature and use case.
 
 #### Ability to turn off encryption for specific locations
 
-While our default, an recommendation remains to encrypt backups, as of this
+While our default recommendation remains to encrypt backups, as of this
 release, you can turn off encryption on a per location basis. This allows you
-to store backups on, for example, you local NAS, in an unencrypted format.
+to store backups on you local NAS, for example, in an unencrypted format.
 
 There is one exception to this, which is Home Assistant Cloud. Backups stored
 in Home Assistant Cloud will always be encrypted, and cannot be turned off.
@@ -132,19 +133,19 @@ ever want to be able to access your data.
 
 #### Downloading backups unencrypted
 
-Downloading backups from the Home Assistant interface, will now always download
-the backup in an unencrypted format, that can be extracted using your favorite
+Downloading backups from the Home Assistant interface will now always download
+the backup in an unencrypted format that can be extracted using your favorite
 archive tool.
 
 This works for all backups, regardless of the encryption setting of the location
 they are stored in. So, if you download an encrypted backup from Home Assistant
-Cloud through the Home Assistant interface, will decrypt the backup on the fly
+Cloud through the Home Assistant interface, it will decrypt the backup on the fly
 while you download it.
 
 ### Customize the time of your backups
 
-The initial iteration of the backup system, scheduled backups to run at 4:45 AM.
-And this time, wasn't ideal for everyone. Some, for example, turned of their
+The initial iteration of the backup system scheduled backups to run at 4:45 AM.
+And this time, wasn't ideal for everyone. Some, for example, turned off their
 NAS systems during the night, meaning the backup would fail.
 
 This release, we added the ability to customize the time of your backups to your
@@ -153,7 +154,7 @@ the days of the week you want the backup to run.
 
 ### Taking backups on an advanced schedule
 
-The above backup time changes not enough for you? Well, you are in luck! This
+The above backup time changes not flexible enough for you? Well, you are in luck! This
 release, we added an action (`backup.automated_backup`) which you can use
 to trigger a backup in an automation.
 
@@ -179,16 +180,16 @@ release, but in a smarter way.
 
 #### Backup on updating Home Assistant
 
-When updating Home Assistant, the toggle is now turned off by defaults and
+When updating Home Assistant, the toggle is now turned off by default and
 shows the last time you made a backup. This gives you a clear indication of
 when you last made a backup, and gives you the ability to decide if you want
 to make a new one before updating.
 
-If you turn the switch on, a full automated backuped is created and synced to
+If you turn the switch on, a full automated backup is created and synced to
 your configured locations, before the update is started.
 
 This full sync is done to ensure you have the latest backup available in case
-the update fails, and you need to restore your system. If an Home Assistant
+the update fails, and you need to restore your system. If a Home Assistant
 update would fatally fail, you'd wouldn't have an interface to download or
 restore a backup from; hence this path is put in place.
 
@@ -210,14 +211,53 @@ One of the feedback we've seen a lot, is that the filenames created by
 backups stored on backup locations, have been very cryptic and hard to
 understand for humans.
 
-This feedback was fair, as the filename was an hash and originally not designed
-to be human readable. This method was not newly introduced last release, but
-I guess it became more apparent with the new backup system.
+This feedback was fair, as the filename was a hash and originally not designed
+to be human readable. This method was not newly introduced last release, but it was made more apparent to us with the new backup system.
 
 So, this release, we've improved the filenames of the backups stored on your
 backup locations. The filename now includes the date and time the backup was
 created, making it easier to understand and identify the backup you are looking
 for, even outside of Home Assistant.
+
+## Voice
+Assist, our [private voice assistant](/voice_control/), is getting a few new features in this release. So let's talk about them!
+
+### New Broadcast intent
+You can now broadcast messages to every other voice assistant in your home. 
+Try it by saying "Broadcast it is time for dinner".
+As always with new intents, support may vary depending on your language, but our language leaders are working hard on making sure it will be supported soon in your language!
+
+### Setting Temperature on Thermostat
+A few releases ago we introduced an intent to get a climate current temperature.
+As of this release, you can also set the target temperature of your thermostat by voice.
+Try it by saying "Set the temperature to 19 degrees"
+This will smartly target the area you are in (If you have a thermostat per area, such as thermostatic valves on your radiators) or the floor you are in (If you only have a central unit). You can also target specific devices by name if you prefer.
+
+### LLMs meet calendars
+Without complex custom tooling, LLM-based conversation agents previously could not fetch events from your calendar. This release changes that. Out of the box, LLM-based agents can now retrieve today’s and this week’s events from any of your calendars. Don’t forget to [expose your calendar entities](## LLMs meet calendars
+
+Without complex custom tooling, LLM-based conversation agents previously could not fetch events from your calendar. This release changes that. Out of the box, LLM-based agents can now retrieve today’s and this week’s events from any of your calendars. Don’t forget to [expose your calendar entities](/voice_control/voice_remote_expose_devices/) to enable this functionality.) to enable this functionality.
+
+### Shared history between the default conversation agent and its LLM-based fallback
+In [2024.12](/blog/2024/12/04/release-202412/) we introduced a lovely feature that allowed you to use our fast and local default conversation agent for most queries, and yet be able to fall back to a much more powerful LLM-based agent for more complex queries.
+
+This introduced some interesting behaviors. From a user perspective, it looked like you were talking to the same assistant, whereas, in reality, nothing was shared between the two agents.
+This led to some less-than-optimal scenarios, such as this one: 
+
+<img>
+
+The first command is processed locally by our default agent, but the follow-up request is processed by the LLM-based agent, since no memory is shared, it does not understand what device you want to turn off.
+
+Starting with this release, both agents now share the same command history, fixing completely this issue.
+
+<img>
+
+### Model Context Protocol
+[Model Context Protocol](https://modelcontextprotocol.io/introduction) is here. Users can now integrate Home Assistant into their AI tools that support MCP, and integrate MCP servers as tools in Home Assistant.
+
+### Home Assistant will be able to call your analog phone to tell you a message.
+
+The [VoIP](/integrations/voip/) integration will now be able to call your phone and tell you a message! Using the [`assist_satellite.announce`](/integrations/assist_satellite#action-assist_satelliteannounce) you can play a message when some one picks up the phone.
 
 ## Integrations
 
@@ -236,11 +276,25 @@ We welcome the following new integrations in this release:
   Monitor your [LetPot indoor garden].
 - **[Overseerr]**, added by [@joostlek]  
   Interact with your [Overseerr media requests] directly from Home Assistant.
+- **[Model Context Protocol Server]**, added by [@allenporter]
+  Enables using Home Assistant to provide context for MCP LLM Client Applications. For example, you can expose your Google Tasks To-do list as a tool for Claude Desktop.
+- **[Model Context Protocol]**, added by [@allenporter]
+  Enables using [MCP Servers] in Home Assistant for providing additional tools to use with a conversation agent.
+- **[Qbus]**, added by [@Qbus-iot]
+  Allows you to integrate your [Qbus Control] into Home Assistant.
+
+
+This release also has a new virtual integration. Virtual integrations are stubs that are handled by other (existing) integrations to help with discoverability. These ones are new:
+
+- **[Decorquip Dream]**, provided by [Motionblinds] added by [@starkillerOG]
 
 [@joostlek]: https://github.com/joostlek
 [@jpelgrom]: https://github.com/jpelgrom
 [@keithle888]: https://github.com/keithle888
 [@Taraman17]: https://github.com/Taraman17
+[@allenporter]: https://github.com/allenporter
+[@starkillerOG]: https://github.com/starkillerOG
+[@Qbus-iot]: https://github.com/Qbus-iot
 [Homee smart home system]: https://hom.ee/
 [Homee]: /integrations/homee
 [iglooco smart access device(s)]: https://www.igloohome.co/#products
@@ -249,13 +303,13 @@ We welcome the following new integrations in this release:
 [LetPot]: /integrations/letpot
 [Overseerr media requests]: https://overseerr.dev/
 [Overseerr]: /integrations/overseerr
-
-**TODO: These still need to be formatted in the list above**
-
-- Add the Model Context Protocol Server integration ([@allenporter] - [#134122]) ([mcp_server docs]) (new-integration)
-- Add the Model Context Protocol integration ([@allenporter] - [#135058]) ([mcp docs]) (new-integration)
-- Add Decorquip virtual motion blinds integration ([@starkillerOG] - [#134402]) ([decorquip docs]) (new-integration)
-- Add new integration Qbus ([@Qbus-iot] - [#127280]) ([qbus docs]) (new-integration)
+[Model Context Protocol]: /integrations/mcp
+[Model Context Protocol Server]: /integrations/mcp_server
+[MCP Servers]: https://modelcontextprotocol.io/
+[Qbus Control]: https://www.qbus.be/
+[Qbus]: /integrations/qbus/
+[Decorquip Dream]: /integrations/decorquip/
+[Motionblinds]: /integrations/motion_blinds
 
 ### Noteworthy improvements to existing integrations
 
@@ -263,10 +317,17 @@ It is not just new {% term integrations %} that have been added; existing
 integrations are also being constantly improved. Here are some of the noteworthy
 changes to existing integrations:
 
-- Add support for Shelly BLU TRV ([@chemelli74] - [#128439]) ([shelly docs]) (noteworthy)
-- Add humidifier entity for Vesync devices ([@iprak] - [#134333]) ([vesync docs]) (new-platform) (noteworthy)
-- Add vesync number platform ([@iprak] - [#135564]) ([vesync docs]) (new-platform) (noteworthy)
-- Initial implementation for tplink tapo vacuums ([@rytilahti] - [#131965]) ([tplink docs]) (new-platform) (noteworthy)
+- Support for the [Shelly] BLU TRV was added by [@chemelli74]!
+- There is now support for humidifiers and numbers for [Vesync] devices! Thanks [@iprak]!
+- [@rytilahti] added support for [TP-Link Tapo] Robovacs.
+
+[@chemelli74]: https://github.com/chemelli74
+[Shelly]: /integrations/shelly
+[@iprak]: https://github.com/iprak
+[Vesync]: /integrations/vesync
+[@rytilahti]: https://github.com/rytilahti
+[TP Link Tapo]: /integrations/tplink
+
 
 ### Now available to set up from the UI
 
@@ -284,17 +345,7 @@ The following integration is now available via the Home Assistant UI:
 
 ## Other noteworthy changes
 
-There are many more improvements in this release; here are some of the other
-noteworthy changes this release:
-
-- The [Lorem ipsum] integration now supports slipsum! Thanks [@frenck]!
-
-[@frenck]: https://github.com/frenck
-[Lorem ipsum]: /integrations/lorem_ipsum
-
-## Lorem ipsum
-
-lorem ipsum
+- New graphs
 
 ## Need help? Join the community!
 
