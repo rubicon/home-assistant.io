@@ -85,6 +85,7 @@ Enjoy the (beta) release!
     - [Backup on updating Home Assistant](#backup-on-updating-home-assistant)
     - [Backup on updating add-ons](#backup-on-updating-add-ons)
   - [Improved filenames for backups](#improved-filenames-for-backups)
+  - [New locations](#new-locations)
 - [Voice](#voice)
   - [New Broadcast intent](#new-broadcast-intent)
   - [Setting Temperature on Thermostat](#setting-temperature-on-thermostat)
@@ -231,6 +232,12 @@ backup locations. The filename now includes the date and time the backup was
 created, making it easier to understand and identify the backup you are looking
 for, even outside of Home Assistant.
 
+### New locations
+
+This release also introduces new locations to store your backups, including [Google Drive](integrations/google_drive/) and [Microsoft OneDrive](/integrations/onedrive/)!
+
+<img class="no-shadow" alt="Temporary screenshot" src="/images/blog/2025-02/backup-locations.png" />
+
 ## Voice
 Assist, our [private voice assistant](/voice_control/), is getting a few new features in this release. So let's talk about them!
 
@@ -292,6 +299,10 @@ We welcome the following new integrations in this release:
   Enables using [MCP Servers] in Home Assistant for providing additional tools to use with a conversation agent.
 - **[Qbus]**, added by [@Qbus-iot]
   Allows you to integrate your [Qbus Control] into Home Assistant.
+- **[Google Drive]**
+  Allows you to store your Home Assistant backups in your Google drive.
+- **[OneDrive]**
+  Allows you to store your Home Assistant backups in your Microsoft OneDrive.
 
 
 This release also has a new virtual integration. Virtual integrations are stubs that are handled by other (existing) integrations to help with discoverability. These ones are new:
@@ -320,6 +331,8 @@ This release also has a new virtual integration. Virtual integrations are stubs 
 [Qbus]: /integrations/qbus/
 [Decorquip Dream]: /integrations/decorquip/
 [Motionblinds]: /integrations/motion_blinds
+[Google Drive]: /integrations/google_drive
+[OneDrive]: /integrations/onedrive
 
 ### Noteworthy improvements to existing integrations
 
