@@ -98,7 +98,7 @@ Enjoy the (beta) release!
 
 ## Iterating on backups
 
-In the previous release we fully revamped the whole backup experience and added
+In the previous release, we fully revamped the whole backup experience and added
 a lot of new features to make it easier to use. That release set the stage for
 next iterations and opened up the ability for integrations to provide locations
 to store backups.
@@ -107,14 +107,14 @@ We've received **a lot** of feedback on the new backup system, which is awesome!
 All the feedback helped us prioritize the most requested features, and other
 improvements to the backup system.
 
-This release includes a lot of the most requested requested improvements and
+This release includes a lot of the most requested improvements and
 abilities.
 
 ### Unencrypted backups
 
 The new backup system came with a lot of security improvements, including
 encryption of backups. However, it turns out, many use these backups to
-extract and restore single files or configurations. A use case, where encryption
+extract and restore single files or configurations. A use case where encryption
 made it harder to use.
 
 This release we made two changes to the backup system, to aid with this most
@@ -127,7 +127,7 @@ release, you can turn off encryption on a per location basis. This allows you
 to store backups on you local NAS, for example, in an unencrypted format.
 
 There is one exception to this, which is Home Assistant Cloud. Backups stored
-in Home Assistant Cloud will always be encrypted, and cannot be turned off.
+in Home Assistant Cloud will always be encrypted, and encryption cannot be turned off.
 At Nabu Casa, we take your privacy and security very seriously, and we never
 ever want to be able to access your data.
 
