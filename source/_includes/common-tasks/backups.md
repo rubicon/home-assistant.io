@@ -41,7 +41,8 @@ The automatic backup process creates a backup on a predefined schedule and also 
    - It is recommended to back up **Daily**, but you can also choose to back up on specific days.
    - Define the time:
      - **System optimal** sets a time in a predefined time window as shown in the UI.
-     - **Custom**: Pick the time when you want the backup to start.
+     - **Custom** lets you pick the time when you want the backup to start.
+     - Make sure you pick a time when all your backup locations are up and running and available. Otherwise, the backup will fail for locations which are not available.
 5. Define how many backups you want to keep.
    - Older backups will be automatically deleted.
    - For example: if you back up daily, and select 7 backups, then the backup from 8 days ago and older will be deleted.
@@ -64,10 +65,10 @@ If you have Home Assistant Cloud, you can store a backup of maximum 5&nbsp;GB on
 1. Go to {% my supervisor_backups title="**Settings** > **System** > **Backups**" %} and under **Automatic backups**, select **Configure automatic backups**.
 2. Under **Locations**, use the toggle to enable all the backup locations you want to use.
    - If you don't see Home Assistant Cloud in the list, you are not [logged in](https://www.nabucasa.com/config/).
+   - If you want to back up to your NAS (such as [Synology](/integrations/synology_dsm/#backup-location)) or a cloud provider (such as [Google Drive](/integrations/google_drive/) or [Microsoft OneDrive](/integrations/onedrive/)), check their integration documentation for specific instructions on setting up a Home Assistant backup.
    - If you don't see a network storage, you haven't added one. Follow the steps on [adding a new network storage](/common-tasks/os/#add-a-new-network-storage) and select the **Backup** option.
    ![Define the backup locations](/images/screenshots/network-storage/backup_locations_encryption.png)
-3. For each enabled location, define whether or not you want the backup to be encrypted.
-   - To change whether or not the backup should be encrypted for a particular location, select the cog {% icon "mdi:cog-outline" %}.
+3. For each enabled location, select the cog {% icon "mdi:cog-outline" %} to enable/disable encryption.
    - **Info**: The backup stored on Home Assistant Cloud is always encrypted.
 
 ### Creating a manual backup
