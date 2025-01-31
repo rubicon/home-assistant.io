@@ -87,18 +87,17 @@ Enjoy the (beta) release!
   - [Improved filenames for backups](#improved-filenames-for-backups)
   - [New locations](#new-locations)
 - [Voice](#voice)
+  - [Home Assistant will be able to call your analog phone to tell you a message](#home-assistant-will-be-able-to-call-your-analog-phone-to-tell-you-a-message)
   - [New Broadcast intent](#new-broadcast-intent)
   - [Setting Temperature on Thermostat](#setting-temperature-on-thermostat)
   - [LLMs meet calendars](#llms-meet-calendars)
   - [Shared history between the default conversation agent and its LLM-based fallback](#shared-history-between-the-default-conversation-agent-and-its-llm-based-fallback)
   - [Model Context Protocol](#model-context-protocol)
-  - [Home Assistant will be able to call your analog phone to tell you a message](#home-assistant-will-be-able-to-call-your-analog-phone-to-tell-you-a-message)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
   - [Now available to set up from the UI](#now-available-to-set-up-from-the-ui)
 - [Other noteworthy changes](#other-noteworthy-changes)
-- [Lorem ipsum](#lorem-ipsum)
 - [Need help? Join the community!](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
@@ -210,7 +209,7 @@ restore a backup from; hence this path is put in place.
 
 When updating add-ons, things are slightly different. The toggle exists here
 too, and is disabled by default. However, when you enable it, only a backup
-of your add-on and its data is created. 
+of your add-on and its data is created.
 
 That way you can keep around the previous version of the add-on, so you can always roll back to it if needed.
 
@@ -238,27 +237,42 @@ This release also introduces new locations to store your backups, there are new 
 <img class="no-shadow" alt="Temporary screenshot" src="/images/blog/2025-02/backup-locations.png" />
 
 ## Voice
-Assist, our [private voice assistant](/voice_control/), is getting a few new features in this release. So let's talk about them!
+
+Assist, our [private voice assistant](/voice_control/), is getting a few new features in this release. If you don't have Assist set up yet, check out our [Home Assistant Voice: Preview Edition](/voice-pe/) to get started.
+
+### Home Assistant will be able to call your analog phone to tell you a message
+
+Remember our tutorial to turn an analog phone into [world's most private voice assistant](/voice_control/worlds-most-private-voice-assistant/)? Thanks to [Jamin](https://github.com/jaminh), we now have a way to call your analog phone from Home Assistant!
+
+You can use [`assist_satellite.announce`](/integrations/assist_satellite#action-assist_satelliteannounce) to have Home Assistant call your phone and play a message when someone picks up the phone.
+
+If you use an LLM as the brains for your voice assistant, you can take this one step further with the new [`assist_satellite.start_conversation`](/integrations/assist_satellite#action-assist_satellitestart_conversation) action. Instead of playing an announcement, it starts a conversation between Home Assistant and the user, with Home Assistant saying the first message. Left the garage door open for 30 minutes? No problem, let Home Assistant call the user and ask if they want to close it.
+
+_(Starting a conversation with the default conversation agent is a bit more work and did not make it this release)_
 
 ### New Broadcast intent
+
 You can now broadcast messages to every other voice assistant in your home.
 Try it by saying "Broadcast it is time for dinner".
 As always with new intents, support may vary depending on your language, but our language leaders are working hard on making sure it will be supported soon in your language!
 
 ### Setting Temperature on Thermostat
+
 A few releases ago we introduced an intent to get a climate current temperature.
 As of this release, you can also set the target temperature of your thermostat by voice.
 Try it by saying "Set the temperature to 19 degrees".
 This will smartly target the area you are in (if you have a thermostat per area, such as thermostatic valves on your radiators) or the floor you are in (if you only have a central unit). You can also target specific devices by name if you prefer.
 
 ### LLMs meet calendars
+
 Without complex custom tooling, LLM-based conversation agents previously could not fetch events from your calendar. This release changes that. Out of the box, LLM-based agents can now retrieve today’s and this week’s events from any of your calendars. Don’t forget to [expose your calendar entities](/voice_control/voice_remote_expose_devices/) to enable this functionality.
 
 ### Shared history between the default conversation agent and its LLM-based fallback
+
 In [2024.12](/blog/2024/12/04/release-202412/) we introduced a lovely feature that allowed you to use our fast and local default conversation agent for most queries, and yet be able to fall back to a much more powerful LLM-based agent for more complex queries.
 
 This introduced some interesting behaviors. From a user perspective, it looked like you were talking to the same assistant, whereas, in reality, nothing was shared between the two agents.
-This led to some less-than-optimal scenarios, such as this one: 
+This led to some less-than-optimal scenarios, such as this one:
 
 <img class="no-shadow" alt="Screenshot of missing history in the conversation" src="/images/blog/2025-02/conversation-history-before.png" />
 
@@ -269,11 +283,12 @@ Starting with this release, both agents now share the same command history, fixi
 <img class="no-shadow" alt="Screenshot of the new improved behavior" src="/images/blog/2025-02/conversation-history-after.png" />
 
 ### Model Context Protocol
-[Model Context Protocol](https://modelcontextprotocol.io/introduction) is here. Users can now integrate Home Assistant into their AI tools that support MCP, and integrate MCP servers as tools in Home Assistant.
 
-### Home Assistant will be able to call your analog phone to tell you a message
+This release adds the [Model Context Protocol](https://modelcontextprotocol.io/introduction) to Home Assistant thanks to [Allen][@allenporter]. Home Assistant can both be an [MCP server](/integrations/mcp_server/) and an [MCP client](/integrations/mcp/). From the MCP website:
 
-The [VoIP](/integrations/voip/) integration will now be able to call your phone and tell you a message! Using the [`assist_satellite.announce`](/integrations/assist_satellite#action-assist_satelliteannounce) you can play a message when someone picks up the phone.
+> MCP is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools.
+
+To give it a try yourself, [check out this client demo](https://gist.github.com/allenporter/b0e9946feb2ab60901c4f467ac1ba6f9).
 
 ## Integrations
 
@@ -284,23 +299,23 @@ and improvements to existing ones! You’re all awesome 🥰
 
 We welcome the following new integrations in this release:
 
-- **[Homee]**, added by [@Taraman17]  
+- **[Homee]**, added by [@Taraman17]<br>
   Integrate your [Homee smart home system] into Home Assistant.
-- **[igloohome]**, added by [@keithle888]  
+- **[igloohome]**, added by [@keithle888]<br>
   Monitor the battery levels of your [iglooco smart access device(s)].
-- **[LetPot]**, added by [@jpelgrom]  
+- **[LetPot]**, added by [@jpelgrom]<br>
   Monitor your [LetPot indoor garden].
-- **[Overseerr]**, added by [@joostlek]  
+- **[Overseerr]**, added by [@joostlek]<br>
   Interact with your [Overseerr media requests] directly from Home Assistant.
-- **[Model Context Protocol Server]**, added by [@allenporter]
+- **[Model Context Protocol Server]**, added by [@allenporter]<br>
   Enables using Home Assistant to provide context for MCP LLM Client Applications. For example, you can expose your Google Tasks To-do list as a tool for Claude Desktop.
-- **[Model Context Protocol]**, added by [@allenporter]
+- **[Model Context Protocol]**, added by [@allenporter]<br>
   Enables using [MCP Servers] in Home Assistant for providing additional tools to use with a conversation agent.
-- **[Qbus]**, added by [@thomasddn]
+- **[Qbus]**, added by [@thomasddn]<br>
   Allows you to integrate your [Qbus Control] into Home Assistant.
-- **[Google Drive]**, added by [@tronikos]
+- **[Google Drive]**, added by [@tronikos]<br>
   Allows you to store your Home Assistant backups in your Google Drive.
-- **[OneDrive]**, added by [@zweckj]
+- **[OneDrive]**, added by [@zweckj]<br>
   Allows you to store your Home Assistant backups in your Microsoft OneDrive.
 
 This release also has a new virtual integration. Virtual integrations are stubs that are handled by other (existing) integrations to help with discoverability. These ones are new:
@@ -479,10 +494,10 @@ To reconfigure the MQTT broker settings, users need to start a Reconfiguration f
 
 {% details "Pentair ScreenLogic" %}
 
-Raw states derived from ScreenLogic enums are now lowercase instead of Title Case. This change impacts: 
+Raw states derived from ScreenLogic enums are now lowercase instead of Title Case. This change impacts:
 - "[**pH**/**ORP**] **dosing state**" `sensor` entities.
   - "Dosing", "Mixing", and "Monitoring" are now "dosing", "mixing", and "monitoring" respectively.
-- `preset_mode` state attribute for ScreenLogic `climate` entities. where raw states have also been underscored-spaced and had any punctuation removed. 
+- `preset_mode` state attribute for ScreenLogic `climate` entities. where raw states have also been underscored-spaced and had any punctuation removed.
   - "Solar", "Solar Preferred", "Heater", and "Don't Change" are now "solar", "solar_preferred", "heater", and "dont_change".
 
 These changes support the addition of translation keys for text-based entity states. Users should update any references to the above states/preset_modes to the new, lowercase versions.
