@@ -10,13 +10,19 @@ ha_codeowners:
 ha_domain: nmbs
 ha_platforms:
   - sensor
+ha_integration_type: integration
+related:
+  - docs: /docs/configuration/
+    title: Configuration file
+ha_quality_scale: legacy
 ---
 
-The `nmbs` platform will create sensors for monitoring travel time and information between 2 stations.
+The `nmbs` {% term integration %} will create sensors for monitoring travel time and information between 2 stations.
 
 ## Configuration
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+To enable this {% term integration %}, add the following lines to your {% term "`configuration.yaml`" %} file.
+{% include integrations/restart_ha_after_config_inclusion.md %}
 
 ```yaml
 # Example configuration.yaml entry
@@ -62,5 +68,5 @@ show_on_map:
 
 <p class='img'>
   <img src='/images/screenshots/nmbs-card-example.png' />
-  <p>Example using the <a href="https://github.com/custom-cards/entity-attributes-card">Lovelace Attributes custom card</a> </p>
+  <p>Example using the <a href="https://github.com/custom-cards/entity-attributes-card">Entity Attributes custom card</a> </p>
 </p>
