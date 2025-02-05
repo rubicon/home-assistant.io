@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2025.2: Iterating on backups"
-description: "Lot of backup features including using Google Drive and Microsoft OneDrive as backup locations! Voice is can now broadcast messages and control your thermostat. And much more!"
+description: "Lot of backup features including using Google Drive and Microsoft OneDrive as backup locations! Voice can now broadcast messages and control your thermostat. And much more!"
 date: 2025-02-05 00:00:00
 date_formatted: "February 5, 2025"
 author: Franck Nijhof
@@ -104,7 +104,7 @@ to store backups on you local NAS, for example, in an unencrypted format.
 
 <img class="no-shadow" alt="Screenshot showing the option to turn off encryption for a specific backup location." src="/images/blog/2025-02/backups-turn-off-encryption.png" />
 
-<img class="no-shadow" alt="Screenshow showing the backup locations, one location indicates that encryption has been turned off." src="/images/blog/2025-02/backups-encryption-turned-off.png" />
+<img class="no-shadow" alt="Screenshot showing the backup locations, one location indicates that encryption has been turned off." src="/images/blog/2025-02/backups-encryption-turned-off.png" />
 
 There is one exception to this, which is [Home Assistant Cloud](/cloud). Backups
 stored in Home Assistant Cloud will always be encrypted, and encryption cannot
@@ -188,7 +188,7 @@ version of the add-on, so you can always roll back to it if needed.
 
 To prevent your system from filling up with old add-on backups, we only retain
 one backup per add-on, automatically deleting the previous backup whenever
-a new one is created. Add-ons backups you created manually, of course,
+a new one is created. Add-on backups you created manually, of course,
 remain untouched and will not be deleted automatically.
 
 ### Improved filenames for backups
@@ -212,7 +212,7 @@ integrations for [Google Drive](/integrations/google_drive/) and
 [Microsoft OneDrive](/integrations/onedrive/), and backup support was added to
 the [Synology DSM](/integrations/synology_dsm) integration.
 
-<img class="no-shadow" alt="Screenshot showing the backup configuration panel, with all possible backup integration set up!" src="/images/blog/2025-02/backups-new-locations.png" />
+<img class="no-shadow" alt="Screenshot showing the backup configuration panel, with all possible backup integrations set up!" src="/images/blog/2025-02/backups-new-locations.png" />
 
 ## Voice
 
@@ -562,7 +562,7 @@ according to your preferences.
 
 {% details "Litter-Robot" %}
 
-Remove extra_state_attributes from Litter-Robot vacuum entities
+Remove extra_state_attributes from Litter-Robot vacuum entities.
 These were previously migrated to sensors.
 
 ([@natekspencer] - [#136196]) ([documentation](/integrations/litterrobot))
@@ -595,10 +595,10 @@ Raw states derived from ScreenLogic enums are now lowercase instead of Title
 Case. This change impacts:
 
 - pH/ORP dosing state sensor entities:
-  - `dosing` -> `dosing`
+  - `Dosing` -> `dosing`
   - `Mixing` -> `mixing`
   - `Monitoring` -> `monitoring`
-- The `preset_mode` state attribute for ScreenLogic climate entities. Where
+- The `preset_mode` state attribute for ScreenLogic climate entities, where
   raw states have also been underscored-spaced and had any punctuation removed.
   - `Solar` -> `solar`
   - `Solar Preferred` -> `solar_preferred`
