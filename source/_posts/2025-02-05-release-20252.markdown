@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2025.2 Beta: Iterating on backups"
-description: "Beta release notes for Home Assistant 2025.2"
-date: 2025-01-29 00:00:00
+title: "2025.2: Iterating on backups"
+description: "Lot of backup features including using Google Drive and Microsoft OneDrive as backup locations! Voice is can now broadcast messages and control your thermostat. And much more!"
+date: 2025-02-05 00:00:00
 date_formatted: "February 5, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -67,11 +67,89 @@ Don't forget to [join our release party live stream on YouTube](https://www.yout
 
 {% endtip %}
 
-Home Assistant 2025.2! 🎉
+Home Assistant 2025.2! ❤️
 
-Enjoy the (beta) release!
+In the previous release, we [overhauled our backup system](/blog/2025/01/03/release-20251/#overhaul-of-the-backup-system),
+and the response was overwhelming! Tons of suggestions and feature requests
+came in, so this release is—once again—focused on backups. We’ve added loads
+of improvements, including the first integrations to store your backups in
+**Google Drive** and **Microsoft OneDrive**!
+
+This release also brings exciting new features to **Voice**! Home Assistant can
+
+Please note that these release notes are a work in progress. 👷‍♀️ We will be
+completing them over the next couple of days. Not all features might be final
+yet, and some features _**may not** make it into the final release_.
+
+<br />
+
+**Want to help test the beta?** Awesome! ❤️ We have documented how you
+[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
+
+<br />
+
+While running the beta, we highly recommend joining our _#beta_ channel on
+the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
+testers are in this channel during the beta period to share experiences, ideas,
+and iterate over new features, fine-tuning them before the final release.
+It's a really fun place to hang out. 😎
+
+<br />
+
+**Reporting issues**: As this is a beta test, you might encounter unexpected
+behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
+You can find our issue trackers and the reported issues during beta here:
+
+<br />
+
+- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/128)
+- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/719)
+- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/135)
+
+🙏 When reporting issues, **make sure to mention the exact beta version you are
+running** in the issue description. This will help us identify and track the
+issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
+
+<br />
+
+Issues introduced in the beta are processed with priority. 🔝
+
+{% endnote %}
+
+{% tip %}
+
+Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=rflpsHsEE5s)
+5 February 2025, at 20:00 GMT / 12:00 PT / 21:00 CET!
+
+{% endtip %}
+
+Home Assistant 2025.2! ❤️
+
+In the previous release, we [overhauled our backup system](/blog/2025/01/03/release-20251/#overhaul-of-the-backup-system),
+and the response was overwhelming! Tons of suggestions and feature requests
+came in, so this release is—once again—focused on backups. We’ve added loads
+of improvements, including the first integrations to store your backups in
+**Google Drive** and **Microsoft OneDrive**!
+
+This release also brings exciting new features to **Voice**! Home Assistant can
+now call your **analog phone**, and when dinner is ready, you can **broadcast**
+that message to all voice assistants in your home! But wait… there’s more!
+
+On **February 12, 2025**, we’re streaming live on YouTube all about Voice:
+[**Vhoice - Chapter 9**](https://www.youtube.com/live/k6VvzDSI8RU)! 🎙
+Be sure to subscribe and hit the bell so you don’t miss it. 🛎
+
+Before diving into the release notes, I also want to give a shoutout to our
+friends at [**ESPHome**](https://esphome.io/)! Powering so much of the Home
+Assistant ecosystem, including Home Assistant Voice PE! And
+on **February 19th**, they’ll be hosting a
+[**live release party for ESPHome 2025.2**](https://www.youtube.com/live/HtG3fjAO96c)! 🎉
+
+Enjoy the release!
 
 ../Frenck
+
+_PS: It is almost Valentine's day, did you set up some romantic scenes yet? 🌹_
 
 <!--more-->
 
