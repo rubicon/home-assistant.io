@@ -793,7 +793,7 @@ support_url:
     'osc_cmd_tpl':         'oscillation_command_template',
     'osc_stat_t':          'oscillation_state_topic',
     'osc_val_tpl':         'oscillation_value_template',
-    'platform':            'p',
+    'p':                   'platform',
     'pct_cmd_t':           'percentage_command_topic',
     'pct_cmd_tpl':         'percentage_command_template',
     'pct_stat_t':          'percentage_state_topic',
