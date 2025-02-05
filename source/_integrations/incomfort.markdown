@@ -1,5 +1,5 @@
 ---
-title: Intergas InComfort/Intouch Lan2RF gateway
+title: Intergas gateway
 description: Instructions on how to integrate an Intergas Lan2RF gateway with Home Assistant.
 ha_category:
   - Binary sensor
@@ -14,6 +14,7 @@ ha_domain: incomfort
 ha_platforms:
   - binary_sensor
   - climate
+  - diagnostics
   - sensor
   - water_heater
 ha_integration_type: integration

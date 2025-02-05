@@ -14,8 +14,10 @@ ha_codeowners:
   - '@webdjoe'
   - '@thegardenmonkey'
   - '@cdnninja'
+  - '@iprak'
 ha_domain: vesync
 ha_platforms:
+  - binary_sensor
   - diagnostics
   - fan
   - humidifier

@@ -9,9 +9,10 @@ ha_config_flow: true
 ha_codeowners:
   - '@jpelgrom'
 ha_domain: letpot
-ha_integration_type: integration
+ha_integration_type: hub
 ha_platforms:
   - time
+ha_quality_scale: bronze
 ---
 
 The **LetPot** {% term integration %} allows you to integrate your [LetPot](https://letpot.com/) hydroponic gardens/systems into Home Assistant.

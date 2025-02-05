@@ -7,12 +7,13 @@ ha_release: 2025.2
 ha_iot_class: Local Push
 ha_config_flow: true
 ha_codeowners:
-  - 'allenporter'
+  - '@allenporter'
 ha_domain: mcp_server
-ha_integration_type: integration
+ha_integration_type: service
 related:
   - docs: /integrations/conversation/
     title: Conversation
+ha_quality_scale: silver
 ---
 
 The [Model Context Protocol](https://modelcontextprotocol.io) is an open protocol that standardizes how applications provide context to <abbr title="Large Language Models">LLMs</abbr>. The **Model Context Protocol Server** (MCP) integration enables using Home Assistant to provide context for <abbr title="Model Context Protocol">MCP</abbr> LLM Client Applications. For example, you can expose your Google Tasks To-do list as a tool for Claude Desktop.

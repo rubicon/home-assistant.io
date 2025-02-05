@@ -13,8 +13,10 @@ ha_codeowners:
 ha_domain: overseerr
 ha_integration_type: service
 ha_platforms:
+  - diagnostics
   - event
   - sensor
+ha_quality_scale: platinum
 ---
 
 Overseerr is a service that allows you to manage media requests and to integrate these media requests with Plex, Radarr, and Sonarr. The **Overseerr** {% term integration %} allows you to integrate your [Overseerr](https://overseerr.dev/) instance.
