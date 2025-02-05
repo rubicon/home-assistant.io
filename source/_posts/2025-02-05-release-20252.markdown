@@ -415,9 +415,11 @@ it is inevitable.
 We always make sure to document these changes to make the transition as easy as
 possible for you. This release has the following backward-incompatible changes:
 
-{% details "Ecovas" %}
+{% details "Ecovacs" %}
 
-The attributes on the vacuum entity for the lifespan of the main brush, side brush, and filter have been deprecated and are now removed in 2025.2. These attributes are superseded by dedicated sensor entities.
+The attributes on the vacuum entity for the lifespan of the main brush, side
+brush, and filter have been deprecated and are now removed. These attributes
+are superseded by dedicated sensor entities.
 
 ([@gjohansson-ST] - [#134492]) ([documentation](/integrations/ecovacs))
 
@@ -428,7 +430,8 @@ The attributes on the vacuum entity for the lifespan of the main brush, side bru
 
 {% details "Home Connect" %}
 
-Some appliances might lose their power entity as the power setting is not reported by the API.
+Some appliances might lose their power entity as the API does not report the
+power setting.
 
 ([@Diegorro98] - [#135930]) ([documentation](/integrations/home_connect))
 
@@ -456,12 +459,17 @@ API and for this reason, the following entities are removed:
 
 {% details "KNX" %}
 
-The "State Updater" option in the integration settings now works as intended. Previously, the option wasn’t applied correctly.
+The "State Updater" option in the integration settings now works as intended.
+Previously, the option wasn’t applied correctly.
 
-- When disabled: KNX will only read a `state_address` once when the connection is established.
-- When enabled: KNX will also read any `state_address` if no value has been received for one hour.
+- When disabled: KNX will only read a `state_address` once when the connection
+  is established.
+- When enabled: KNX will also read any `state_address` if no value has been
+  received for one hour.
 
-Please review your integration settings to ensure this option is configured according to your preferences.
+Please review your integration settings to ensure this option is configured
+according to your preferences.
+
 ([@farmio] - [#135611]) ([documentation](/integrations/knx))
 
 [@farmio]: https://github.com/farmio
@@ -483,7 +491,13 @@ These were previously migrated to sensors.
 
 {% details "MQTT" %}
 
-To reconfigure the MQTT broker settings, users need to start a Reconfiguration flow. When `CONFIGURE` is selected, MQTT shows a page "MQTT settings" with subscribe and publish tools. The `Re-configure MQTT` button will be replaced with a `MQTT options` page. The reconfiguration option will only be available from the MQTT Config Entry context menu.
+To change the MQTT broker settings, you need to start a reconfiguration.
+When `CONFIGURE` is selected, MQTT shows a "MQTT settings" page with subscribe
+and publish tools. The `Re-configure MQTT` button will be replaced with
+an `MQTT options` page.
+
+The reconfiguration option will only be available from the MQTT integration
+entry context menu.
 
 ([@jbouwh] - [#133342]) ([documentation](/integrations/mqtt))
 
@@ -494,13 +508,23 @@ To reconfigure the MQTT broker settings, users need to start a Reconfiguration f
 
 {% details "Pentair ScreenLogic" %}
 
-Raw states derived from ScreenLogic enums are now lowercase instead of Title Case. This change impacts:
-- "[**pH**/**ORP**] **dosing state**" `sensor` entities.
-  - "Dosing", "Mixing", and "Monitoring" are now "dosing", "mixing", and "monitoring" respectively.
-- `preset_mode` state attribute for ScreenLogic `climate` entities. where raw states have also been underscored-spaced and had any punctuation removed.
-  - "Solar", "Solar Preferred", "Heater", and "Don't Change" are now "solar", "solar_preferred", "heater", and "dont_change".
+Raw states derived from ScreenLogic enums are now lowercase instead of Title
+Case. This change impacts:
 
-These changes support the addition of translation keys for text-based entity states. Users should update any references to the above states/preset_modes to the new, lowercase versions.
+- pH/ORP dosing state sensor entities:
+  - `dosing` -> `dosing`
+  - `Mixing` -> `mixing`
+  - `Monitoring` -> `monitoring`
+- The `preset_mode` state attribute for ScreenLogic climatec entities. Where
+  raw states have also been underscored-spaced and had any punctuation removed.
+  - `Solar` -> `solar`
+  - `Solar Preferred` -> `solar_preferred`
+  - `Heater` -> `heater`
+  - `Don't Change` -> `dont_change`
+
+These changes support the addition of translation keys for text-based entity
+states. You should update any references to the above states/preset_modes to
+the new, lowercase versions.
 
 ([@dieselrabbit] - [#133866]) ([documentation](/integrations/screenlogic))
 
@@ -509,40 +533,11 @@ These changes support the addition of translation keys for text-based entity sta
 
 {% enddetails %}
 
-{% details "Raw Backward-incompatible changes" %}
-
-- Make screenlogic state enums lowercase ([@dieselrabbit] - [#133866]) ([screenlogic docs]) (breaking-change)
-- Remove mqtt publish templates after 6 months of deprecation ([@jbouwh] - [#134056]) ([mqtt docs]) (breaking-change)
-- Remove deprecated yaml import for Russound RIO ([@noahhusby] - [#134072]) ([russound_rio docs]) (breaking-change)
-- Remove deprecated Mastodon yaml config import ([@andrew-codechimp] - [#134040]) ([mastodon docs]) (breaking-change)
-- Remove deprecated yaml import from OTP integration ([@tr4nt0r] - [#134196]) ([otp docs]) (breaking-change)
-- Remove deprecated yaml import from pyLoad integration ([@tr4nt0r] - [#134200]) ([pyload docs]) (breaking-change)
-- Remove worldclock config entry import ([@gjohansson-ST] - [#134491]) ([worldclock docs]) (breaking-change)
-- Remove deprecated attributes from ecovacs ([@gjohansson-ST] - [#134492]) ([ecovacs docs]) (breaking-change)
-- Remove deprecated uptime sensor from qnap_qsw ([@gjohansson-ST] - [#134493]) ([qnap_qsw docs]) (breaking-change)
-- Remove deprecated sensors in Habitica integration ([@tr4nt0r] - [#134320]) ([habitica docs]) (breaking-change)
-- Remove deprecated binary sensor battery charging from technove ([@gjohansson-ST] - [#134844]) ([technove docs]) (breaking-change)
-- Remove deprecated hdr switch from reolink ([@gjohansson-ST] - [#134924]) ([reolink docs]) (breaking-change)
-- Remove deprecated config entry import from bluesound ([@gjohansson-ST] - [#134926]) ([bluesound docs]) (breaking-change)
-- Change minimum SQLite version to 3.40.1 ([@gjohansson-ST] - [#135042]) ([recorder docs]) (breaking-change)
-- Refactor the MQTT option and reconfigure flow ([@jbouwh] - [#133342]) ([mqtt docs]) (breaking-change)
-- Drop Python 3.12 support ([@frenck] - [#135589]) (breaking-change)
-- Bump `imgw_pib` to version 1.0.9 and remove hydrological detail entities ([@bieniu] - [#134668]) ([imgw_pib docs]) (breaking-change)
-- Add power switch only if it is available at Home Connect ([@Diegorro98] - [#135930]) ([home_connect docs]) (breaking-change)
-- Fix KNX default state updater option ([@farmio] - [#135611]) ([knx docs]) (breaking-change)
-- Raise exceptions in HEOS service actions ([@andrewsayre] - [#136049]) ([heos docs]) (breaking-change)
-- Remove extra_state_attributes from Litter-Robot vacuum entities ([@natekspencer] - [#136196]) ([litterrobot docs]) (breaking-change)
-- Remove deprecated 17track package sensor ([@gjohansson-ST] - [#136389]) ([seventeentrack docs]) (breaking-change)
-- Cleanup ecobee YAML configuration import ([@epenet] - [#136633]) ([ecobee docs]) (breaking-change)
-- Raise exceptions in HEOS custom actions ([@andrewsayre] - [#136546]) ([heos docs]) (breaking-change)
-- Use the new hybrid Hydrawise client ([@dknowles2] - [#136522]) ([hydrawise docs]) (breaking-change)
-
-{% enddetails %}
-
 If you are a custom integration developer and want to learn about changes and
 new features available for your integration: Be sure to follow our
 [developer blog][devblog]. The following are the most notable for this release:
 
+- [Energy by distance units](https://developers.home-assistant.io/blog/2025/01/31/energy-distance-units/)
 - [Relocate dhcp/ssdp/usb/zeroconf ServiceInfo models](https://developers.home-assistant.io/blog/2025/01/15/service-info)
 
 [devblog]: https://developers.home-assistant.io/blog/
