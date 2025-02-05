@@ -361,19 +361,39 @@ It is not just new {% term integrations %} that have been added; existing
 integrations are also being constantly improved. Here are some of the noteworthy
 changes to existing integrations:
 
-- Support for the [Shelly] BLU TRV was added by [@chemelli74]!
-- [@joostlek] added support for the [HomeWizard] Plug-In Battery. Thanks Joost!
-- There is now support for humidifiers and numbers for [Vesync] devices! Thanks [@iprak]!
-- [@rytilahti] added support for [TP-Link Tapo] Robovacs.
+- A big shout to [@NoRi2909]! He has been reviewing and improving every single
+  piece of text we show anywhere in Home Assistant. Thank you for your hard work!
+- Also, [@lboue]! This hero keeps extending the device support for the [Matter]
+  integration by adding support for more and more devices. Home Assistant is
+  close to reaching full Matter 1.4 device support!
+- [@chemelli74] added support for the [Shelly BLU TRV] to the [Shelly]
+  integration. Nice!
+- The [HomeWizard Energy] integration now supports the
+  [HomeWizard Plug-In Battery]. Awesome work [@DCSBL]!
+- Thanks to [@iprak], the [Vesync] integration now supports humidifiers!
+- [@rytilahti] added vacuum support to the [TP-Link Smart Home] integration. Sweet!
+- The [Reolink] integration keeps evolving, [@starkillerOG] added support for
+  the baby crying detection as a sensor. Nice!
+- The [Bang & Olufsen] integration now provides entities allowing you to react
+  to physical button presses on all Bang & Olufsen devices. Thanks [@mj23000]!
 
 [@chemelli74]: https://github.com/chemelli74
-[Shelly]: /integrations/shelly
+[@DCSBL]: https://github.com/DCSBL
 [@iprak]: https://github.com/iprak
-[Vesync]: /integrations/vesync
+[@lboue]: https://github.com/lboue
+[@mj23000]: https://github.com/mj23000
+[@NoRi2909]: https://github.com/NoRi2909
 [@rytilahti]: https://github.com/rytilahti
-[TP Link Tapo]: /integrations/tplink
-[HomeWizard]: /integrations/homewizard
-
+[@starkillerOG]: https://github.com/starkillerOG
+[Bang & Olufsen]: /integrations/bang_olufsen
+[HomeWizard Energy]: /integrations/homewizard
+[HomeWizard Plug-In Battery]: https://www.homewizard.com/nl/plug-in-battery/
+[Matter]: /integrations/matter
+[Reolink]: /integrations/reolink
+[Shelly BLU TRV]: https://www.shelly.com/products/shelly-blu-trv-single-pack
+[Shelly]: /integrations/shelly
+[TP-Link Smart Home]: /integrations/tplink
+[Vesync]: /integrations/vesync
 
 ### Now available to set up from the UI
 
