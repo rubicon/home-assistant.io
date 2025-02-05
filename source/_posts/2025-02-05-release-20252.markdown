@@ -98,6 +98,8 @@ Enjoy the (beta) release!
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
   - [Now available to set up from the UI](#now-available-to-set-up-from-the-ui)
 - [Other noteworthy changes](#other-noteworthy-changes)
+- [Bluetooth config panel](#bluetooth-config-panel)
+- [Preparing our graphs for the future](#preparing-our-graphs-for-the-future)
 - [Need help? Join the community!](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
@@ -414,10 +416,51 @@ The following integration is now available via the Home Assistant UI:
 
 ## Other noteworthy changes
 
-- The frontend is using a new graph library! You should not notice any big changes (yet), but this will prepare us for bigger changes in the future!
-- The [bluetooth] integration got its own config panel, where you can see information about your bluetooth devices, like advertisement data.
+- When using the [Generic thermostat], setting a temperature that matches
+  one of the presets will automatically select that preset as active.
+  Thanks [@domingues]!
+- [Time triggers] in automations can now be offset when using datetime input
+  helpers. Thanks [@Petro31]!
 
-[bluetooth]: /integrations/bluetooth
+[@domingues]: https://github.com/domingues
+[@Petro31]: https://github.com/Petro31
+[Generic thermostat]: /integrations/generic_thermostat
+[Time triggers]: /docs/automation/trigger/#time-trigger
+
+## Bluetooth config panel
+
+The [Bluetooth integration] now has its own configuration panel! 💙
+
+The panel is accessible by going to **Settings** > **Device & services**. Find
+and select the **Bluetooth** integration, and next select **Configure**.
+
+This new panel gives you access to the Bluetooth integration options and
+insights into the connection slot allocations. More importantly,
+it has an advertisement monitor!
+
+Selecting **Advertisement monitor** will open a new panel, where you can see
+information about your Bluetooth devices, including the raw advertisement data
+and how they are connected to your Home Assistant instance. This includes
+which [Bluetooth proxy] it connects through!
+
+<img class="no-shadow" alt="Screenshot of the new advertisement panel" src="/images/blog/2025-02/bluetooth-panel.png" />
+
+[Bluetooth integration]: /integrations/bluetooth
+[Bluetooth proxy]: /integrations/bluetooth/#remote-adapters-bluetooth-proxies
+
+## Preparing our graphs for the future
+
+This release includes a major overhaul of every graph we display and show in
+Home Assistant. We have entirely replaced the software library that renders
+these graphs in the frontend.
+
+You can most definitely tell things have changed, but everything still looks
+very similar. The latter was our goal for now, as we wanted the existing
+experience to be familiar.
+
+However, this change is a preparation for the future. We have many plans and
+ideas for our graphs, and this change was a necessary step to make those plans
+possible.
 
 ## Need help? Join the community!
 
