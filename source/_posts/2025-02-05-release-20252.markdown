@@ -405,8 +405,11 @@ to set up and use.
 The following integration is now available via the Home Assistant UI:
 
 - **[NMBS]**, done by [@silamon]
+- **[Filter]**, done by [@gjohansson-ST]
 
+[@gjohansson-ST]: https://github.com/gjohansson-ST
 [@silamon]: https://github.com/silamon
+[Filter]: /integrations/filter
 [NMBS]: /integrations/nmbs
 
 ## Other noteworthy changes
