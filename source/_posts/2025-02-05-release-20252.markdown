@@ -76,17 +76,16 @@ _PS: It is almost Valentine's day, did you set up some romantic scenes yet? 🌹
 
 ## Iterating on backups
 
-In the previous release, we fully revamped the whole backup experience and added
-a lot of new features to make it easier to use. That release set the stage for
-next iterations and opened up the ability for integrations to provide locations
-to store backups.
+In the previous release, we [fully revamped the whole backup experience](/blog/2025/01/03/release-20251/#overhaul-of-the-backup-system)
+and added a lot of new features to make it easier to use. That release set the
+stage for next iterations and opened up the ability for integrations to provide
+locations to store backups.
 
-We've received **a lot** of feedback on the new backup system, which is awesome!
+We've received **a lot** of feedback on the new backup system, which is awesome! ❤️
 All the feedback helped us prioritize the most requested features, and other
 improvements to the backup system.
 
-This release includes a lot of the most requested improvements and
-abilities.
+This release includes a lot of the most requested improvements and abilities.
 
 ### Unencrypted backups
 
