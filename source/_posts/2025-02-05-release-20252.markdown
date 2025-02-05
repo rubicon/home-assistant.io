@@ -299,55 +299,61 @@ and improvements to existing ones! You’re all awesome 🥰
 
 We welcome the following new integrations in this release:
 
+- **[Google Drive]**, added by [@tronikos]<br>
+  Add your Google Drive as a local for Home Assistant to store backups on.
 - **[Homee]**, added by [@Taraman17]<br>
   Integrate your [Homee smart home system] into Home Assistant.
 - **[igloohome]**, added by [@keithle888]<br>
   Monitor the battery levels of your [iglooco smart access device(s)].
 - **[LetPot]**, added by [@jpelgrom]<br>
   Monitor your [LetPot indoor garden].
+- **[OneDrive]**, added by [@zweckj]<br>
+  Allows you to store your Home Assistant backups in your Microsoft OneDrive.
 - **[Overseerr]**, added by [@joostlek]<br>
   Interact with your [Overseerr media requests] directly from Home Assistant.
 - **[Model Context Protocol Server]**, added by [@allenporter]<br>
-  Enables using Home Assistant to provide context for MCP LLM Client Applications. For example, you can expose your Google Tasks To-do list as a tool for Claude Desktop.
+  Enables using Home Assistant to provide context for MCP LLM Client
+  Applications. For example, you can expose your Google Tasks to-do list as a
+  tool for [Claude Desktop].
 - **[Model Context Protocol]**, added by [@allenporter]<br>
-  Enables using [MCP Servers] in Home Assistant for providing additional tools to use with a conversation agent.
+  Enables using [MCP Servers] in Home Assistant to provide additional tools to
+  use with a conversation agent.
 - **[Qbus]**, added by [@thomasddn]<br>
   Allows you to integrate your [Qbus Control] into Home Assistant.
-- **[Google Drive]**, added by [@tronikos]<br>
-  Allows you to store your Home Assistant backups in your Google Drive.
-- **[OneDrive]**, added by [@zweckj]<br>
-  Allows you to store your Home Assistant backups in your Microsoft OneDrive.
 
-This release also has a new virtual integration. Virtual integrations are stubs that are handled by other (existing) integrations to help with discoverability. These ones are new:
+This release also has new virtual integration. Virtual integrations are stubs
+that are handled by other (existing) integrations to help with findability.
+The following virtual integration have been added:
 
 - **[Decorquip Dream]**, provided by [Motionblinds] added by [@starkillerOG]
 
+[@allenporter]: https://github.com/allenporter
 [@joostlek]: https://github.com/joostlek
 [@jpelgrom]: https://github.com/jpelgrom
 [@keithle888]: https://github.com/keithle888
-[@Taraman17]: https://github.com/Taraman17
-[@allenporter]: https://github.com/allenporter
 [@starkillerOG]: https://github.com/starkillerOG
+[@Taraman17]: https://github.com/Taraman17
 [@thomasddn]: https://github.com/thomasddn
 [@tronikos]: https://github.com/tronikos
 [@zweckj]: https://github.com/zweckj
+[Claude Desktop]: https://claude.ai/download
+[Decorquip Dream]: /integrations/decorquip/
+[Google Drive]: /integrations/google_drive
 [Homee smart home system]: https://hom.ee/
 [Homee]: /integrations/homee
 [iglooco smart access device(s)]: https://www.igloohome.co/#products
 [igloohome]: /integrations/igloohome
 [LetPot indoor garden]: https://letpot.com/
 [LetPot]: /integrations/letpot
+[MCP Servers]: https://modelcontextprotocol.io/
+[Model Context Protocol Server]: /integrations/mcp_server
+[Model Context Protocol]: /integrations/mcp
+[Motionblinds]: /integrations/motion_blinds
+[OneDrive]: /integrations/onedrive
 [Overseerr media requests]: https://overseerr.dev/
 [Overseerr]: /integrations/overseerr
-[Model Context Protocol]: /integrations/mcp
-[Model Context Protocol Server]: /integrations/mcp_server
-[MCP Servers]: https://modelcontextprotocol.io/
 [Qbus Control]: https://www.qbus.be/
 [Qbus]: /integrations/qbus/
-[Decorquip Dream]: /integrations/decorquip/
-[Motionblinds]: /integrations/motion_blinds
-[Google Drive]: /integrations/google_drive
-[OneDrive]: /integrations/onedrive
 
 ### Noteworthy improvements to existing integrations
 
