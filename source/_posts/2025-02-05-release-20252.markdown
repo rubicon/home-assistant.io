@@ -19,9 +19,10 @@ Home Assistant 2025.2! ❤️
 
 In the previous release, we [overhauled our backup system](/blog/2025/01/03/release-20251/#overhaul-of-the-backup-system),
 and the response was overwhelming! Tons of suggestions and feature requests
-came in, so this release is—once again—focused on backups. We’ve added loads
-of improvements, including the first integrations to store your backups in
-**Google Drive** and **Microsoft OneDrive**!
+came in, so this release is—once again—focused on backups. Based on this
+community feedback, we’ve added loads of improvements, including the first
+integrations to store your backups in **Google Drive**
+and **Microsoft OneDrive**!
 
 This release also brings exciting new features to **Voice**! Home Assistant can
 now call your **analog phone**, and when dinner is ready, you can **broadcast**
@@ -32,7 +33,7 @@ On **February 12, 2025**, we’re streaming live on YouTube all about Voice:
 Be sure to subscribe and hit the bell so you don’t miss it. 🛎
 
 Before diving into the release notes, I also want to give a shoutout to our
-friends at [**ESPHome**](https://esphome.io/)! Powering so much of the Home
+friends at [**ESPHome**](https://esphome.io/) powering so much of the Home
 Assistant ecosystem, including Home Assistant Voice PE! And
 on **February 19th**, they’ll be hosting a
 [**live release party for ESPHome 2025.2**](https://www.youtube.com/live/HtG3fjAO96c)! 🎉
@@ -90,8 +91,8 @@ This release includes a lot of the most requested improvements and abilities.
 ### Unencrypted backups
 
 The new backup system came with a lot of security improvements, including
-encryption of backups. However, as it turns out, many use these backups to
-extract and restore single files or configurations, a use case in which
+encryption of backups. However, as it turns out, many users use these backups
+to extract and restore single files or configurations, a use case in which
 encryption made things more difficult. In this release we made two changes
 to the backup system to address this.
 
@@ -149,15 +150,15 @@ online, and then starts a backup.
 ### Re-introduction of the backup toggle on update
 
 If you run Home Assistant OS, you get updates for Home Assistant along with
-all your add-ons. This used to have a toggle to create a backup before updating,
-which was removed in the previous release.
+all your add-ons. The update dialog used to have a toggle to create a backup
+before updating, which was removed in the previous release.
 
 This change was made because this feature was considered redundant when running
 regular automated backups. However, we’ve received a lot of feedback that many
 people relied on these backups to ensure they had the latest data, for instance,
 if they needed to roll back to a previous version of an add-on. We are
 re-introducing this backup on update toggle in this release, but in a smarter
-way.
+way. 🤓
 
 #### Backup on updating Home Assistant
 
@@ -186,8 +187,9 @@ version of the add-on, so you can always roll back to it if needed.
 <img class="no-shadow" alt="Screenshot showing an Home Assistant add-on update dialog, giving the option to make a backup before update." src="/images/blog/2025-02/backups-addons-before-update.png" />
 
 To prevent your system from filling up with old add-on backups, we only retain
-one add-on backup, automatically deleting the previous backup whenever
-a new one is created.
+one backup per add-on, automatically deleting the previous backup whenever
+a new one is created. Add-ons backups you created manually, of course,
+remain untouched and will not be deleted automatically.
 
 ### Improved filenames for backups
 
@@ -237,7 +239,7 @@ Left the garage door open for 30 minutes? No problem, let Home Assistant call
 and ask if they want to close it.
 
 _(Starting a conversation with the default conversation agent is a bit more work
-and did not make it this release)_
+and did not make it this release)._
 
 ### New Broadcast intent
 
@@ -312,13 +314,13 @@ and improvements to existing ones! You’re all awesome 🥰
 We welcome the following new integrations in this release:
 
 - **[Google Drive]**, added by [@tronikos]<br>
-  Add your Google Drive as a location for Home Assistant to store backups on.
+  Add your Google Drive as a location to store your Home Assistant backups.
 - **[Homee]**, added by [@Taraman17]<br>
   Integrate your [Homee smart home system] into Home Assistant.
 - **[igloohome]**, added by [@keithle888]<br>
-  Monitor the battery levels of your [iglooco smart access device(s)].
+  Monitor the battery levels of your [igloo smart access device(s)].
 - **[LetPot]**, added by [@jpelgrom]<br>
-  Monitor your [LetPot indoor garden].
+  Monitor and control your [LetPot indoor garden].
 - **[OneDrive]**, added by [@zweckj]<br>
   Allows you to store your Home Assistant backups in your Microsoft OneDrive.
 - **[Overseerr]**, added by [@joostlek]<br>
@@ -353,7 +355,7 @@ The following virtual integration have been added:
 [Google Drive]: /integrations/google_drive
 [Homee smart home system]: https://hom.ee/
 [Homee]: /integrations/homee
-[iglooco smart access device(s)]: https://www.igloohome.co/#products
+[igloo smart access device(s)]: https://www.igloohome.co/#products
 [igloohome]: /integrations/igloohome
 [LetPot indoor garden]: https://letpot.com/
 [LetPot]: /integrations/letpot
