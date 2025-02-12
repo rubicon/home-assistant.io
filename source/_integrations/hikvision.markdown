@@ -2,7 +2,7 @@
 title: Hikvision
 description: Instructions on how to set up Hikvision camera binary sensors within Home Assistant.
 ha_category:
-  - Binary Sensor
+  - Binary sensor
 ha_release: 0.35
 ha_iot_class: Local Push
 ha_codeowners:
@@ -10,6 +10,8 @@ ha_codeowners:
 ha_domain: hikvision
 ha_platforms:
   - binary_sensor
+ha_integration_type: integration
+ha_quality_scale: legacy
 ---
 
 The Hikvision Binary Sensor is a platform that parses the event stream of a
@@ -23,10 +25,10 @@ as a trigger. If you would like to hide a sensor type you can do so by either
 unchecking "Notify the surveillance center" in the camera configuration or by
 using the "ignored" customize option detailed below.
 
-<div class='note'>
-In order for the sensors to work the hikvision user must have the 'Remote: Notify Surveillance Center/Trigger Alarm Output' permission which can be enabled from the user management section of the web interface.
-Also the 'WEB Authentication' needs to be set to 'digest/basic' in the security/authentication section. Ensure this is applied on each individual camera in case of using an NVR.
-</div>
+{% important %}
+In order for the sensors to work the hikvision user must have the 'Remote: Notify Surveillance Center/Trigger Alarm Output' permission which can be enabled from the user management section of the web interface. If authentication issues persist after permissions are verified, try accessing using an admin user. Certain devices will only authenticate with an admin account despite permissions being set correctly.
+Also, the 'WEB Authentication' needs to be set to 'digest/basic' in the security/authentication section. Ensure this is applied on each individual camera in case of using an NVR.
+{% endimportant %}
 
 For example, if you configure a camera with the name "Front Porch" that has
 motion detection and line crossing events enabled to notify the surveillance
@@ -53,16 +55,18 @@ binary_sensor.home_line_crossing_2
 This platform should work with all Hikvision cameras and nvrs,
 and has been confirmed to work with the following models:
 
-- DS-2CD3132-I
-- DS-2CD2232-I5
 - DS-2CD2032-I
 - DS-2CD2042WD-I
+- DS-2CD2043G0-I
 - DS-2CD2142FWD-I
 - DS-2CD2155FWD-IS
+- DS-2CD2232-I5
 - DS-2CD2385G1
-- IPC-D140H(-M)
+- DS-2CD2387G2-LU
+- DS-2CD3132-I
 - DS-7616NI-K2 (NVR)
 - ERI-K104-PR (NVR)
+- IPC-D140H(-M)
 
 This platform also was confirmed to work with the following Hikvison-based NVRS
 
@@ -72,7 +76,7 @@ This platform also was confirmed to work with the following Hikvison-based NVRS
 ## Configuration
 
 To enable this sensor,
-add the following lines are required in your `configuration.yaml` file:
+add the following lines are required in your {% term "`configuration.yaml`" %} file:
 
 ```yaml
 binary_sensor:
@@ -142,7 +146,6 @@ Supported sensor/event types are:
 - Motion
 - Line Crossing
 - Field Detection
-- Video Loss
 - Tamper Detection
 - Shelter Alarm
 - Disk Full
@@ -164,7 +167,7 @@ Supported sensor/event types are:
 
 ## Examples
 
-Example of a configuration in your `configuration.yaml`
+Example of a configuration in your {% term "`configuration.yaml`" %}
 that utilizes the customize options for a camera:
 
 ```yaml
@@ -182,7 +185,7 @@ binary_sensor:
         ignored: true
 ```
 
-Example of a configuration in your `configuration.yaml`
+Example of a configuration in your {% term "`configuration.yaml`" %}
 that utilizes the customize options for a nvr:
 
 ```yaml

@@ -10,6 +10,8 @@ ha_codeowners:
 ha_domain: nsw_fuel_station
 ha_platforms:
   - sensor
+ha_integration_type: integration
+ha_quality_scale: legacy
 ---
 
 The `nsw_fuel_station` sensor platform uses the [NSW Fuel Check App](https://www.fuelcheck.nsw.gov.au/app) data as a source for current fuel price data.
@@ -31,7 +33,7 @@ Alternatively:
 
 ## Configuration
 
-To add the NSW fuel station price sensor to your installation, add the following to your `configuration.yaml` file:
+To add the NSW fuel station price sensor to your installation, add the following to your {% term "`configuration.yaml`" %} file:
 
 ```yaml
 sensor:

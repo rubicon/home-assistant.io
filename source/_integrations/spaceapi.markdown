@@ -8,13 +8,19 @@ ha_release: '0.70'
 ha_codeowners:
   - '@fabaff'
 ha_domain: spaceapi
+ha_integration_type: integration
+related:
+  - docs: /docs/configuration/
+    title: Configuration file
+ha_quality_scale: legacy
 ---
 
-The `spaceapi` integration allow Hackerspaces to expose information to web apps or any other application with the [SpaceAPI](https://spaceapi.io/).
+The `spaceapi` {% term integration %} allow Hackerspaces to expose information to web apps or any other application with the [SpaceAPI](https://spaceapi.io/).
 
 ## Configuration
 
-To setup the `spaceapi` integration in your installation, add the following to your `configuration.yaml` file:
+To setup the `spaceapi` {% term integration %} in your installation, add the following to your {% term "`configuration.yaml`" %} file.
+{% include integrations/restart_ha_after_config_inclusion.md %}
 
 ```yaml
 # Example configuration.yaml entry
@@ -89,7 +95,7 @@ contact:
           required: false
           type: string
         twitter:
-          description: Twitter username of the keymaster.
+          description: X username of the keymaster.
           required: false
           type: string
     irc:
@@ -97,7 +103,7 @@ contact:
       required: false
       type: string
     twitter:
-      description: The Twitter account of the Hackerspace.
+      description: The X account of the Hackerspace.
       required: false
       type: string
     facebook:
@@ -261,21 +267,9 @@ sensors:
 
 The list of sensors can be any sensor, not just temperature or humidity.
 
-## Sensor specific location
-
-The [SpaceAPI specification](http://spaceapi.net/documentation) requires every sensor to provide a location.
-In order to set a sensor specific location do the following steps:
-
-1. Go to Configuration -> Customization
-2. Select the sensor entity
-3. Pick "Other" from the attribute override pulldown
-4. Set the attribute name to location and the attribute value to your desired location
-
-If no location is set, the location defined in the HA configuration is used.
-
 ## Examples
 
-In this section you find some real-life examples of how to use this component.
+In this section you find some real-life examples of how to use this integration.
 
 ### Eastermundigen
 
@@ -296,7 +290,7 @@ spaceapi:
   issue_report_channels:
     - email
   state:
-    entity_id: binary_sensor.front_door"
+    entity_id: "binary_sensor.front_door"
     icon_open: https://eastermundigen.ch/open.png
     icon_closed: https://eastermundigen.ch/close.png
   sensors:
